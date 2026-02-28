@@ -1,6 +1,1352 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import '../styles/globals.css';
 ---
 
-<h1 style="font-size:60px;">Learn2Grow</h1>
-<p>This is the real homepage.</p>
+<Layout title="learn2grow | Executive Search & Strategic Consulting">
+
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-container">
+        <a href="#" class="logo" id="logo-link">
+            <img src="/images/Logo.jpeg" alt="learn2grow" />
+        </a>
+        <ul class="nav-links">
+            <li><a href="#headhunting" data-i18n="navHeadhunting">HEADHUNTING</a></li>
+            <li><a href="#hr-consulting" data-i18n="navHRConsulting">HR CONSULTING</a></li>
+            <li><a href="#about" data-i18n="navAboutUs">ABOUT US</a></li>
+            <li><a href="#insights" data-i18n="navInsights">INSIGHTS</a></li>
+            <li><a href="#contact" data-i18n="navContact">CONTACT</a></li>
+        </ul>
+        <div class="language-toggle">
+            <button class="lang-btn" data-lang="cs">CZ</button>
+            <button class="lang-btn active" data-lang="en">EN</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-slider">
+        <div class="hero-slide">
+            <div class="hero-slide-inner">
+                <div class="hero-slide-image">
+                    <img src="/images/hero.jpg" alt="Executive Search & Strategic Consulting" />
+                </div>
+                <div class="hero-slide-content">
+                    <h2 class="hero-slide-subheader" data-i18n="heroTitle">Executive Search<br />& Strategic Consulting</h2>
+                    <p class="hero-slide-text" data-i18n="heroText">We help you identify leaders who move your organization forward. We build on trust and a deep understanding of your needs.</p>
+                    <div class="hero-cta-group">
+                        <a href="mailto:info@learn2grow.cz?subject=Consulting" class="cta-button" data-i18n="heroCTA">Schedule a consultation</a>
+                        <a href="#headhunting" class="cta-button-outline" data-i18n="learnMore">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Headhunting Section -->
+<section id="headhunting" class="section-white">
+    <div class="section-inner">
+        <div class="section-header">
+            <h1 class="section-title-large" data-i18n="headhuntingTitle">Headhunting</h1>
+            <div class="orange-bar"></div>
+            <p class="section-lead" data-i18n="executiveSearchText">Executive search starts with a deep understanding of your business, its context, and its leadership needs. We bring in-depth insight into your situation and identify candidates who deliver real, lasting value to your organization. Our work combines direct search with disciplined assessment and a deep understanding of organizational context. All of our consultants bring first-hand corporate leadership experience, enabling sharper judgment and better hiring decisions.</p>
+        </div>
+
+        <div class="quality-box">
+            <h2 class="quality-title" data-i18n="qualityTitle">Focused on Quality and Long-Term Impact</h2>
+            <p class="quality-text" data-i18n="qualityText1">Our approach is built on quality, context, and long-term impact. We do not evaluate candidates in isolation — we assess leadership potential, cultural alignment, and the ability to contribute meaningfully to your business over time. The goal is not just to fill a role, but to strengthen your organization.</p>
+            <p class="quality-text" data-i18n="qualityText2">We typically support clients in situations where hiring is complex, sensitive, or strategically critical, including when:</p>
+            <ul class="bullet-list">
+                <li><span class="bullet-dot">•</span><p data-i18n="bullet1">a confidential or sensitive position needs to be filled</p></li>
+                <li><span class="bullet-dot">•</span><p data-i18n="bullet2">the organization is growing rapidly and internal HR capacity is stretched</p></li>
+                <li><span class="bullet-dot">•</span><p data-i18n="bullet3">a key role remains unfilled for an extended period</p></li>
+                <li><span class="bullet-dot">•</span><p data-i18n="bullet4">the required expertise is scarce in the market</p></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- HR Consulting Section -->
+<section id="hr-consulting" class="section-surface section-with-glow">
+    <div class="section-inner">
+        <div class="section-header">
+            <h1 class="section-title-large" data-i18n="hrTitle">HR Consulting</h1>
+            <div class="orange-bar"></div>
+            <p class="section-lead" data-i18n="hrText">Our passion is to work with companies and their leaders to grow their human capital. We help companies implement solid HR processes such as performance management, competency models, assessment centers, people development, 360 degree feedback, assessing and optimizing sales force.</p>
+        </div>
+
+        <div class="white-card">
+            <h2 class="card-title" data-i18n="buildingTitle">Building Strong People Systems</h2>
+            <p class="card-text" data-i18n="buildingText1">We support organizations in designing, implementing, and optimizing core HR processes that create clarity, consistency, and long-term impact. Our consulting work is practical, business-oriented, and closely aligned with leadership priorities. Our engagements are focused on enabling better leadership decisions, stronger teams, and sustainable organizational growth — not just short-term fixes.</p>
+
+            <p class="expertise-label" data-i18n="buildingText2">Our areas of expertise include:</p>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <span data-i18n="expertise1">Performance management systems</span>
+                </div>
+                <div class="expertise-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <span data-i18n="expertise2">Competency and leadership models</span>
+                </div>
+                <div class="expertise-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <span data-i18n="expertise3">Assessment centers and talent diagnostics</span>
+                </div>
+                <div class="expertise-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <span data-i18n="expertise4">People development programs</span>
+                </div>
+                <div class="expertise-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <span data-i18n="expertise5">360-degree feedback</span>
+                </div>
+                <div class="expertise-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <span data-i18n="expertise6">Assessment and optimization of sales forces</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-cta">
+            <a href="mailto:lucie@learn2grow.cz?subject=HR Consulting" class="cta-orange" data-i18n="hrCTA">
+                Get in Touch
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about" class="section-white">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2 class="section-title-large" data-i18n="navAboutUs">About Us</h2>
+            <div class="orange-bar"></div>
+            <p class="section-lead" data-i18n="approachText">We bring inspiration, insights and great commitment into our projects to help you become a better business. We pride in designing solutions that are both sustainable and socially responsible.</p>
+        </div>
+
+        <div class="two-col-grid">
+            <div class="why-box">
+                <h3 class="why-title" data-i18n="whyTitle">Why learn2grow</h3>
+                <p data-i18n="whyText">We partner with you to build performance-oriented organizations and to find and develop leaders at all levels of your organization. We help you build a company culture that makes extraordinary results sustainable by focusing on values, results and competencies.</p>
+            </div>
+            <div class="stats-col">
+                <div class="stat-block stat-block--orange">
+                    <div class="stat-number">50+</div>
+                    <p class="stat-label" data-i18n="stat1Label">Clients for whom we found and placed new team members</p>
+                </div>
+                <div class="stat-block stat-block--primary">
+                    <div class="stat-number">300+</div>
+                    <p class="stat-label" data-i18n="stat2Label">Custom-made eLearning courses</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our People -->
+        <div id="team" class="team-section">
+            <h3 class="subsection-title" data-i18n="teamTitle">Our People</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <a href="https://www.linkedin.com/in/lucie-melicharova-0267aa3/" target="_blank" rel="noopener noreferrer" aria-label="View Lucie Melicharová's LinkedIn profile" class="team-photo-link">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop" alt="Lucie Melicharová" loading="lazy" class="team-photo" />
+                        <div class="linkedin-overlay">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(15, 23, 42, 0.8)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                        </div>
+                    </a>
+                    <div>
+                        <h4 class="member-name">Lucie Melicharová</h4>
+                        <p class="member-role">Managing Director</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <a href="https://www.linkedin.com/in/amandabence/" target="_blank" rel="noopener noreferrer" aria-label="View Amanda Bence's LinkedIn profile" class="team-photo-link">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop" alt="Amanda Bence" loading="lazy" class="team-photo" />
+                        <div class="linkedin-overlay">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(15, 23, 42, 0.8)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                        </div>
+                    </a>
+                    <div>
+                        <h4 class="member-name">Amanda Bence</h4>
+                        <p class="member-role">Partner, Executive Search</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <a href="https://www.linkedin.com/in/monika-vale%C5%A1ov%C3%A1-26889553/" target="_blank" rel="noopener noreferrer" aria-label="View Monika Valešová's LinkedIn profile" class="team-photo-link">
+                        <img src="https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=200&h=200&fit=crop" alt="Monika Valešová" loading="lazy" class="team-photo" />
+                        <div class="linkedin-overlay">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(15, 23, 42, 0.8)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                        </div>
+                    </a>
+                    <div>
+                        <h4 class="member-name">Monika Valešová</h4>
+                        <p class="member-role">Consultant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials-section">
+            <h3 class="subsection-title" data-i18n="testimonialTitle">What Our Clients Say</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--orange)"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"></path></svg>
+                    </div>
+                    <p class="testimonial-text" data-i18n="testimonial1">"We use innovative solutions from learn2grow portfolio to develop and grow our employees and our business."</p>
+                    <div class="testimonial-author-block">
+                        <p class="testimonial-author">CEO</p>
+                        <p class="testimonial-company">Financial institution</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--orange)"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"></path></svg>
+                    </div>
+                    <p class="testimonial-text" data-i18n="testimonial2">"learn2grow is a long-term, high quality partner in hiring into important positions at our company."</p>
+                    <div class="testimonial-author-block">
+                        <p class="testimonial-author">HR Director</p>
+                        <p class="testimonial-company">International Corporation</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--orange)"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"></path></svg>
+                    </div>
+                    <p class="testimonial-text" data-i18n="testimonial3">"The e-learning modules delivered by learn2grow are easy-to-use, interactive, well structured and they cover all important topics and areas."</p>
+                    <div class="testimonial-author-block">
+                        <p class="testimonial-author">Learning & Development Manager</p>
+                        <p class="testimonial-company">FMCG</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Insights Section -->
+<section id="insights" class="section-insights">
+    <div class="section-inner">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 class="section-title-large" data-i18n="insightsTitle">Insights</h2>
+            <div class="orange-bar" style="margin: 0 auto;"></div>
+        </div>
+        <div class="articles-grid">
+            <div class="article-card">
+                <div class="article-image" style="background-image: url('/images/article1.jpg');">
+                    <span class="category-badge">Articles</span>
+                </div>
+                <div class="article-body">
+                    <p class="article-date">January 26, 2026</p>
+                    <h3 class="article-title" data-i18n="article1Title">Leadership Through the Eyes of AI</h3>
+                    <p class="article-excerpt" data-i18n="article1Excerpt">AI is taking hold in companies, and managers often have high expectations of AI. But what does AI actually expect from leaders?</p>
+                    <a href="/leadership-ai" class="read-more-link" data-i18n="readMore">
+                        Read more
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-image" style="background-image: url('/images/article2.jpg');">
+                    <span class="category-badge category-badge--primary">News</span>
+                </div>
+                <div class="article-body">
+                    <p class="article-date">December 12, 2025</p>
+                    <h3 class="article-title" data-i18n="article2Title">Preparing Leaders for the Era of Physical AI</h3>
+                    <p class="article-excerpt" data-i18n="article2Excerpt">Lucie Melicharová at Exponential Circles discussing what the Physical AI revolution means for business and human resources.</p>
+                    <a href="#" class="read-more-link" data-i18n="readMore">
+                        Read more
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-image" style="background-image: url('/images/article3.jpg');">
+                    <span class="category-badge category-badge--primary">News</span>
+                </div>
+                <div class="article-body">
+                    <p class="article-date">January 13, 2025</p>
+                    <h3 class="article-title" data-i18n="article3Title">ESG in Practice: Supporting Clients on Their Sustainability Journey</h3>
+                    <p class="article-excerpt" data-i18n="article3Excerpt">Real change within an organization starts with people and their understanding of new challenges.</p>
+                    <a href="#" class="read-more-link" data-i18n="readMore">
+                        Read more
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="/insights" class="cta-orange-rounded" data-i18n="readAll">
+                Read All Insights
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+</button>
+
+<!-- Cookie Consent Banner -->
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <p><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
+            <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Accept</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer / Contact -->
+<footer id="contact">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <img src="/images/Logo.jpeg" alt="learn2grow" class="footer-logo" />
+                <div class="footer-contact">
+                    <p><strong>learn2grow s. r. o.</strong></p>
+                    <p>Prague, Czech Republic</p>
+                    <p>(+420) 773 923 402</p>
+                    <p>info@learn2grow.cz</p>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading" data-i18n="footerServices">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#headhunting" data-i18n="headhuntingTitle">Headhunting</a></li>
+                    <li><a href="#hr-consulting" data-i18n="hrTitle">HR Consulting</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading" data-i18n="footerCompany">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#about" data-i18n="footerAbout">About Us</a></li>
+                    <li><a href="#team" data-i18n="footerTeam">Team</a></li>
+                    <li><a href="#insights" data-i18n="footerInsights">Insights</a></li>
+                    <li class="footer-privacy">
+                        <p><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="copyright">Copyright © 2002–2026 learn2grow</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/learn2grow" target="_blank" rel="noopener noreferrer" aria-label="Visit learn2grow on LinkedIn" class="social-btn">in</a>
+                <a href="mailto:info@learn2grow.cz" aria-label="Send email to learn2grow" class="social-btn">✉</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</Layout>
+
+<style is:global>
+/* ─── Navigation ─────────────────────────────────────────── */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+nav.scrolled {
+    padding: 0.75rem 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    align-items: center;
+    gap: 2rem;
+}
+.nav-container .logo { justify-self: start; }
+.nav-container .nav-links { justify-self: center; }
+.nav-container .language-toggle { justify-self: end; }
+
+.logo {
+    display: block;
+    height: 48px;
+    transition: height 0.3s ease;
+}
+nav.scrolled .logo { height: 36px; }
+.logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+.nav-links {
+    display: flex;
+    gap: 2.25rem;
+    list-style: none;
+    justify-content: center;
+}
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding-bottom: 4px;
+}
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 3px;
+    background: linear-gradient(90deg, var(--orange), #EA580C);
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+.nav-links a:hover,
+.nav-links a.active { color: var(--primary); }
+.nav-links a.active { font-weight: 600; }
+
+.language-toggle {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.lang-btn {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid var(--text-light);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'DM Sans', sans-serif;
+}
+.lang-btn:hover { border-color: var(--primary); color: var(--primary); }
+.lang-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* ─── Hero ───────────────────────────────────────────────── */
+.hero {
+    margin-top: 70px;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #fff, #fff7ed, #ffedd5);
+    overflow: hidden;
+    position: relative;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -30%; right: -10%;
+    width: 120%; height: 160%;
+    background: radial-gradient(circle, rgba(255,140,0,0.08) 0%, transparent 70%);
+    animation: float 20s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% { transform: translate(0) rotate(0); }
+    33%       { transform: translate(30px, -30px) rotate(5deg); }
+    66%       { transform: translate(-20px, 20px) rotate(-5deg); }
+}
+.hero-slider {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    z-index: 1;
+    min-height: 75vh;
+    width: 100%;
+}
+.hero-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+.hero-slide-inner {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    padding: 2rem 0;
+    flex-direction: row-reverse;
+}
+.hero-slide-image {
+    flex: 0 0 380px;
+    max-width: 380px;
+}
+.hero-slide-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+.hero-slide-content { flex: 1; }
+.hero-slide-subheader {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+.hero-slide-text {
+    font-size: 1.4rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+.hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--primary);
+}
+.cta-button:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249,115,22,0.3);
+}
+.cta-button-outline {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--primary);
+}
+.cta-button-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+@keyframes fadeInUp {
+    0%   { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Sections ───────────────────────────────────────────── */
+.section-white   { padding: 6rem 2rem; background: white; scroll-margin-top: 60px; }
+.section-surface { padding: 6rem 2rem; background: var(--surface); scroll-margin-top: 60px; }
+.section-insights { padding: 6rem 0; background: var(--surface); scroll-margin-top: 60px; }
+.section-with-glow { position: relative; overflow: hidden; }
+.section-with-glow::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+.section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+.section-insights .section-inner {
+    padding: 0 2rem;
+}
+.section-header { margin-bottom: 4rem; }
+.section-title-large {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+.orange-bar {
+    width: 60px;
+    height: 3px;
+    background: var(--orange);
+    margin-bottom: 2rem;
+}
+.section-lead {
+    font-size: 1.3rem;
+    color: var(--text);
+    line-height: 1.8;
+    max-width: 900px;
+}
+.section-cta { text-align: center; }
+
+/* ─── Headhunting ────────────────────────────────────────── */
+.quality-box {
+    background: var(--surface);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--orange);
+}
+.quality-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+.quality-text {
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1.9;
+    margin-bottom: 2rem;
+}
+.bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0;
+}
+.bullet-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 1.25rem;
+}
+.bullet-dot {
+    color: var(--orange);
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+.bullet-list p {
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ─── HR Consulting ──────────────────────────────────────── */
+.white-card {
+    background: white;
+    padding: 4rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    margin-bottom: 3rem;
+}
+.card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+.card-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text);
+    margin-bottom: 3rem;
+}
+.expertise-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+.expertise-item {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    transition: background 0.3s ease;
+}
+.expertise-item:hover { background: #ffe8d1; }
+.expertise-item svg { flex-shrink: 0; margin-top: 2px; }
+.expertise-item span {
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+.cta-orange {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.2rem 3rem;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(249,115,22,0.3);
+}
+.cta-orange:hover {
+    background: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249,115,22,0.4);
+}
+
+/* ─── About ──────────────────────────────────────────────── */
+.two-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    align-items: start;
+}
+.why-box {
+    background: var(--surface);
+    padding: 3rem;
+    border-left: 4px solid var(--orange);
+    height: 100%;
+}
+.why-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+.stats-col {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1rem 0;
+}
+.stat-block {
+    padding-bottom: 1.5rem;
+}
+.stat-block--orange { border-bottom: 3px solid var(--orange); }
+.stat-block--primary { border-bottom: 3px solid var(--primary); }
+.stat-number {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+.stat-label {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+.team-section { margin-bottom: 5rem; scroll-margin-top: 80px; }
+.subsection-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 3rem;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.team-photo-link {
+    flex-shrink: 0;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+.team-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: block;
+}
+.linkedin-overlay {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px; height: 45px;
+    background: rgba(249,115,22,0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.team-photo-link:hover .linkedin-overlay { opacity: 1; }
+.member-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.25rem 0;
+}
+.member-role { font-size: 0.95rem; color: var(--text-light); margin: 0; }
+
+/* ─── Testimonials ───────────────────────────────────────── */
+.testimonials-section { }
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+.testimonial-card {
+    position: relative;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(249,115,22,0.12);
+}
+.quote-icon {
+    width: 50px; height: 50px;
+    background: rgba(249,115,22,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.testimonial-text {
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+.testimonial-author-block {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(249,115,22,0.2);
+}
+.testimonial-author {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.95rem;
+    margin: 0 0 0.25rem 0;
+}
+.testimonial-company { font-size: 0.85rem; color: var(--text-light); margin: 0; }
+
+/* ─── Insights / Articles ────────────────────────────────── */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+.article-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.article-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+.article-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+.category-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(255,255,255,0.95);
+    color: var(--orange);
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.category-badge--primary { color: var(--primary); }
+.article-body {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.article-date { font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.75rem; }
+.article-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+.article-excerpt {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+.read-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--orange);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: gap 0.3s ease;
+}
+.read-more-link:hover { gap: 0.75rem; }
+.cta-orange-rounded {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(249,115,22,0.3);
+}
+.cta-orange-rounded:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249,115,22,0.4);
+}
+
+/* ─── Back to Top ────────────────────────────────────────── */
+#backToTop {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    width: 50px; height: 50px;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 14px rgba(249,115,22,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#backToTop.visible { opacity: 1; visibility: visible; }
+#backToTop:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(249,115,22,0.4); }
+
+/* ─── Cookie Banner ──────────────────────────────────────── */
+.cookie-banner {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(30,30,30,0.98);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    z-index: 10000;
+    display: none;
+    animation: slideUp 0.4s ease-out;
+}
+.cookie-banner.show { display: block; }
+@keyframes slideUp {
+    0%   { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+.cookie-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.cookie-text { flex: 1; min-width: 300px; }
+.cookie-text p { margin: 0; font-size: 0.95rem; line-height: 1.6; opacity: 0.9; }
+.cookie-text a { color: var(--orange); text-decoration: underline; }
+.cookie-buttons { display: flex; gap: 1rem; flex-shrink: 0; }
+.cookie-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'DM Sans', sans-serif;
+}
+.cookie-btn--accept { background: var(--orange); color: #fff; }
+.cookie-btn--accept:hover { background: #ea580c; transform: translateY(-2px); }
+.cookie-btn--decline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+.cookie-btn--decline:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.1); }
+
+/* ─── Footer ─────────────────────────────────────────────── */
+footer {
+    background: #F8FAFC;
+    color: var(--text);
+    padding: 4rem 0 2rem 0;
+}
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+.footer-logo {
+    height: 60px;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+.footer-contact { color: var(--text); line-height: 1.8; }
+.footer-contact p { margin-bottom: 0.5rem; color: var(--text-light); }
+.footer-contact strong { color: var(--primary); }
+.footer-heading {
+    margin-bottom: 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    color: var(--primary);
+}
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 0.75rem; }
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-links a:hover { color: var(--orange); }
+.footer-privacy { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.footer-privacy p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+.footer-privacy a { color: var(--orange); text-decoration: underline; }
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+.footer-bottom p { color: var(--text-light); font-size: 0.9rem; }
+.social-links { display: flex; gap: 1rem; }
+.social-btn {
+    width: 44px; height: 44px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+.social-btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .hero-slide-inner { flex-direction: column; gap: 2rem; }
+    .hero-slide-image { max-width: 100%; width: 100%; flex: none; }
+    .two-col-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .team-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .testimonials-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .articles-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .expertise-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 768px) {
+    .nav-container { grid-template-columns: 1fr auto; }
+    .nav-links { display: none; }
+    .nav-container .nav-links { display: none; }
+    .hero-slide-subheader { font-size: 2rem; }
+    .hero-slide-text { font-size: 1.1rem; }
+    .section-title-large { font-size: 2rem; }
+    .cookie-content { flex-direction: column; text-align: center; }
+    .cookie-buttons { width: 100%; justify-content: center; }
+}
+@media (max-width: 600px) {
+    .hero-slider { padding: 2rem 1rem; }
+}
+</style>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn') as NodeListOf<HTMLButtonElement>;
+let currentLang: string = localStorage.getItem('language') || 'en';
+
+const translations: Record<string, Record<string, string>> = {
+    en: {
+        navHeadhunting: 'HEADHUNTING',
+        navHRConsulting: 'HR CONSULTING',
+        navAboutUs: 'ABOUT US',
+        navInsights: 'INSIGHTS',
+        navContact: 'CONTACT',
+        heroTitle: 'Executive Search<br>& Strategic Consulting',
+        heroText: 'We help you identify leaders who move your organization forward. We build on trust and a deep understanding of your needs.',
+        heroCTA: 'Schedule a consultation',
+        learnMore: 'Learn More',
+        approachText: 'We bring inspiration, insights and great commitment into our projects to help you become a better business. We pride in designing solutions that are both sustainable and socially responsible.',
+        whyTitle: 'Why learn2grow',
+        whyText: 'We partner with you to build performance-oriented organizations and to find and develop leaders at all levels of your organization. We help you build a company culture that makes extraordinary results sustainable by focusing on values, results and competencies.',
+        stat1Label: 'Clients for whom we found and placed new team members',
+        stat2Label: 'Custom-made eLearning courses',
+        testimonialTitle: 'What Our Clients Say',
+        testimonial1: '"We use innovative solutions from learn2grow portfolio to develop and grow our employees and our business."',
+        testimonial2: '"learn2grow is a long-term, high quality partner in hiring into important positions at our company."',
+        testimonial3: '"The e-learning modules delivered by learn2grow are easy-to-use, interactive, well structured and they cover all important topics and areas."',
+        headhuntingTitle: 'Headhunting',
+        executiveSearchText: 'Executive search starts with a deep understanding of your business, its context, and its leadership needs. We bring in-depth insight into your situation and identify candidates who deliver real, lasting value to your organization. Our work combines direct search with disciplined assessment and a deep understanding of organizational context. All of our consultants bring first-hand corporate leadership experience, enabling sharper judgment and better hiring decisions.',
+        qualityTitle: 'Focused on Quality and Long-Term Impact',
+        qualityText1: 'Our approach is built on quality, context, and long-term impact. We do not evaluate candidates in isolation — we assess leadership potential, cultural alignment, and the ability to contribute meaningfully to your business over time. The goal is not just to fill a role, but to strengthen your organization.',
+        qualityText2: 'We typically support clients in situations where hiring is complex, sensitive, or strategically critical, including when:',
+        bullet1: 'a confidential or sensitive position needs to be filled',
+        bullet2: 'the organization is growing rapidly and internal HR capacity is stretched',
+        bullet3: 'a key role remains unfilled for an extended period',
+        bullet4: 'the required expertise is scarce in the market',
+        hrTitle: 'HR Consulting',
+        hrText: 'Our passion is to work with companies and their leaders to grow their human capital. We help companies implement solid HR processes such as performance management, competency models, assessment centers, people development, 360 degree feedback, assessing and optimizing sales force.',
+        hrCTA: 'Get in Touch',
+        buildingTitle: 'Building Strong People Systems',
+        buildingText1: 'We support organizations in designing, implementing, and optimizing core HR processes that create clarity, consistency, and long-term impact. Our consulting work is practical, business-oriented, and closely aligned with leadership priorities. Our engagements are focused on enabling better leadership decisions, stronger teams, and sustainable organizational growth — not just short-term fixes.',
+        buildingText2: 'Our areas of expertise include:',
+        expertise1: 'Performance management systems',
+        expertise2: 'Competency and leadership models',
+        expertise3: 'Assessment centers and talent diagnostics',
+        expertise4: 'People development programs',
+        expertise5: '360-degree feedback',
+        expertise6: 'Assessment and optimization of sales forces',
+        teamTitle: 'Our People',
+        insightsTitle: 'Insights',
+        article1Title: 'Leadership Through the Eyes of AI',
+        article1Excerpt: 'AI is taking hold in companies, and managers often have high expectations of AI. But what does AI actually expect from leaders?',
+        article2Title: 'Preparing Leaders for the Era of Physical AI',
+        article2Excerpt: 'Lucie Melicharová at Exponential Circles discussing what the Physical AI revolution means for business and human resources.',
+        article3Title: 'ESG in Practice: Supporting Clients on Their Sustainability Journey',
+        article3Excerpt: 'Real change within an organization starts with people and their understanding of new challenges.',
+        readMore: 'Read more',
+        readAll: 'Read All Insights',
+        footerServices: 'Services',
+        footerCompany: 'Company',
+        footerAbout: 'About Us',
+        footerTeam: 'Team',
+        footerInsights: 'Insights',
+        copyright: 'Copyright © 2002–2026 learn2grow',
+        privacyText: 'We respect high standards of privacy protection. Read more about our',
+        privacyLink: 'Privacy Policy and Cookie Statement',
+    },
+    cs: {
+        navHeadhunting: 'HEADHUNTING',
+        navHRConsulting: 'HR PORADENSTVÍ',
+        navAboutUs: 'O NÁS',
+        navInsights: 'NOVINKY',
+        navContact: 'KONTAKT',
+        heroTitle: 'Executive Search<br>& Strategické poradenství',
+        heroText: 'Pomáháme vám identifikovat lídry, kteří posunou vaši organizaci vpřed. Stavíme na důvěře a hlubokém porozumění vašim potřebám.',
+        heroCTA: 'Domluvit konzultaci',
+        learnMore: 'Zjistit více',
+        approachText: 'Do našich projektů vnášíme inspiraci, poznatky a velké odhodlání, abychom vám pomohli stát se lepším podnikem. Hrdě navrhujeme řešení, která jsou udržitelná a společensky odpovědná.',
+        whyTitle: 'Proč learn2grow',
+        whyText: 'Spolupracujeme s vámi při budování výkonnostně orientovaných organizací a při hledání a rozvoji lídrů na všech úrovních vaší organizace. Pomáháme vám budovat firemní kulturu, která činí mimořádné výsledky udržitelnými díky zaměření na hodnoty, výsledky a kompetence.',
+        stat1Label: 'Klientů, pro které jsme našli a umístili nové členy týmu',
+        stat2Label: 'E-learningových kurzů na míru',
+        testimonialTitle: 'Co říkají naši klienti',
+        testimonial1: '"Spolupráce s learn2grow transformovala náš proces výběru vedoucích pracovníků. Našli kandidáty, které bychom sami neobjevili."',
+        testimonial2: '"Jejich strategický přístup k HR poradenství nám pomohl vybudovat silnější organizační kulturu a výrazně zlepšil udržení talentů."',
+        testimonial3: '"Programy učení a rozvoje jsou dokonale přizpůsobeny našim potřebám. Náš tým výrazně vyrostl."',
+        headhuntingTitle: 'Headhunting',
+        executiveSearchText: 'Executive search začíná hlubokým porozuměním vašemu podnikání, jeho kontextu a potřebám vedení. Přinášíme hloubkový vhled do vaší situace a identifikujeme kandidáty, kteří přinesou skutečnou a trvalou hodnotu vaší organizaci.',
+        qualityTitle: 'Zaměření na kvalitu a dlouhodobý dopad',
+        qualityText1: 'Náš přístup je postaven na kvalitě, kontextu a dlouhodobém dopadu. Kandidáty nevyhodnocujeme izolovaně — posuzujeme vůdčí potenciál, kulturní soulad a schopnost přispět k vašemu podnikání v čase smysluplně.',
+        qualityText2: 'Typicky podporujeme klienty v situacích, kdy je nábor složitý, citlivý nebo strategicky kritický, včetně případů, kdy:',
+        bullet1: 'je třeba obsadit důvěrnou nebo citlivou pozici',
+        bullet2: 'organizace rychle roste a vnitřní HR kapacita je přetížena',
+        bullet3: 'klíčová role zůstává dlouhodobě neobsazena',
+        bullet4: 'požadovaná expertiza je na trhu vzácná',
+        hrTitle: 'HR Poradenství',
+        hrText: 'Naší vášní je pracovat se společnostmi a jejich lídry na rozvoji jejich lidského kapitálu.',
+        hrCTA: 'Kontaktujte nás',
+        buildingTitle: 'Budování silných personálních systémů',
+        buildingText1: 'Podporujeme organizace při navrhování, implementaci a optimalizaci klíčových HR procesů, které vytvářejí jasnost, konzistenci a dlouhodobý dopad.',
+        buildingText2: 'Naše oblasti odbornosti zahrnují:',
+        expertise1: 'Systémy řízení výkonu',
+        expertise2: 'Kompetenční a vůdčí modely',
+        expertise3: 'Asesorská centra a diagnostika talentů',
+        expertise4: 'Programy rozvoje lidí',
+        expertise5: '360stupňová zpětná vazba',
+        expertise6: 'Hodnocení a optimalizace obchodních týmů',
+        teamTitle: 'Náš tým',
+        insightsTitle: 'Novinky',
+        article1Title: 'Vedení očima AI',
+        article1Excerpt: 'AI se v firmách prosazuje a manažeři od ní často mají vysoká očekávání. Co ale AI očekává od lídrů?',
+        article2Title: 'Příprava lídrů na éru fyzické AI',
+        article2Excerpt: 'Lucie Melicharová na Exponential Circles diskutuje, co revoluce fyzické AI znamená pro podnikání a lidské zdroje.',
+        article3Title: 'ESG v praxi: Podpora klientů na jejich cestě k udržitelnosti',
+        article3Excerpt: 'Skutečná změna v organizaci začíná u lidí a jejich porozumění novým výzvám.',
+        readMore: 'Číst více',
+        readAll: 'Zobrazit vše',
+        footerServices: 'Služby',
+        footerCompany: 'Společnost',
+        footerAbout: 'O nás',
+        footerTeam: 'Tým',
+        footerInsights: 'Novinky',
+        copyright: 'Copyright © 2002–2026 learn2grow',
+        privacyText: 'Respektujeme vysoké standardy ochrany soukromí. Přečtěte si více o naší',
+        privacyLink: 'Politice ochrany osobních údajů a cookies',
+    }
+};
+
+function setLanguage(lang: string): void {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    langBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+    const t = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n')!;
+        if (t[key]) el.innerHTML = t[key];
+    });
+}
+
+langBtns.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang!)));
+setLanguage(currentLang);
+
+// Cookie consent
+function loadAnalytics(): void {
+    // Replace G-XXXXXXXXXX with your actual GA ID when ready
+    const id = 'G-XXXXXXXXXX';
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+    document.head.appendChild(s);
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    function gtag(...args: any[]): void { (window as any).dataLayer.push(args); }
+    gtag('js', new Date());
+    gtag('config', id);
+}
+
+const cookieBanner = document.getElementById('cookieBanner')!;
+const cookieAccept = document.getElementById('cookieAccept')!;
+const cookieDecline = document.getElementById('cookieDecline')!;
+const consent = localStorage.getItem('cookieConsent');
+
+if (consent === 'accepted') {
+    loadAnalytics();
+} else if (!consent) {
+    setTimeout(() => cookieBanner.classList.add('show'), 1000);
+}
+cookieAccept.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    cookieBanner.classList.remove('show');
+    loadAnalytics();
+});
+cookieDecline.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'declined');
+    cookieBanner.classList.remove('show');
+});
+
+// Navbar scroll + active section highlight
+function updateActiveNav(): void {
+    const path = window.location.pathname;
+    const anchors = document.querySelectorAll<HTMLAnchorElement>('.nav-links a[href^="#"]');
+    const sections = document.querySelectorAll<HTMLElement>('section[id], footer[id]');
+    let active = '';
+    const scrollPos = window.scrollY + 150;
+    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
+    if (atBottom) {
+        active = 'contact';
+    } else {
+        sections.forEach(s => {
+            if (scrollPos >= s.offsetTop && scrollPos < s.offsetTop + s.offsetHeight) active = s.id;
+        });
+    }
+    anchors.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === `#${active}`) a.classList.add('active');
+    });
+}
+
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar')!;
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    updateActiveNav();
+
+    const btn = document.getElementById('backToTop')!;
+    btn.classList.toggle('visible', window.scrollY > 500);
+});
+
+// Logo click → scroll to top
+document.getElementById('logo-link')!.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Smooth scroll for all anchor links
+document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href')!);
+        if (target) {
+            e.preventDefault();
+            const offset = document.getElementById('navbar')!.offsetHeight + 20;
+            window.scrollTo({ top: (target as HTMLElement).offsetTop - offset, behavior: 'smooth' });
+        }
+    });
+});
+
+// Back to top
+document.getElementById('backToTop')!.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
