@@ -1,0 +1,452 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/globals.css';
+---
+
+<Layout title="HR Lessons from Behavioral Economics - learn2grow">
+
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-container">
+        <a href="/" class="logo" id="logo-link">
+            <img src="/images/Logo.jpeg" alt="learn2grow" />
+        </a>
+        <ul class="nav-links">
+            <li><a href="/#headhunting" data-i18n="navHeadhunting">HEADHUNTING</a></li>
+            <li><a href="/#hr-consulting" data-i18n="navHRConsulting">HR CONSULTING</a></li>
+            <li><a href="/#about" data-i18n="navAboutUs">ABOUT US</a></li>
+            <li><a href="/#insights" data-i18n="navInsights">INSIGHTS</a></li>
+            <li><a href="/#contact" data-i18n="navContact">CONTACT</a></li>
+        </ul>
+        <div class="language-toggle">
+            <button class="lang-btn" data-lang="cs">CZ</button>
+            <button class="lang-btn active" data-lang="en">EN</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Article Header -->
+<header class="article-header">
+    <span class="article-category-badge" data-i18n="articleCategory">Articles</span>
+    <h1 class="article-title" data-i18n="articleTitle">HR Lessons from Behavioral Economics</h1>
+    <p class="article-subtitle" data-i18n="articleSubtitle">How the science of human decision-making can transform the employee experience</p>
+    <p class="article-meta" data-i18n="articleDate">April 1, 2016</p>
+</header>
+
+<!-- Article Content -->
+<article class="article-content">
+    <a href="/insights" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"></path>
+        </svg>
+        <span data-i18n="backToInsights">Back to Insights</span>
+    </a>
+
+    <div class="article-image">
+        <img src="/images/article9.jpg" alt="HR Lessons from Behavioral Economics" />
+    </div>
+
+    <div class="article-intro">
+        <p data-i18n="articleIntro">Data has given us unprecedented ability to understand human behaviour. Yet meaningful interpretation remains elusive — because human behaviour is often irrational. Behavioral economics offers HR professionals a new lens: a bridge between the rational analytical world and the often inconsistent reality of how people actually make decisions.</p>
+    </div>
+
+    <p class="article-lead" data-i18n="articleLead">Marketing professionals have long used behavioral economics to shape consumer choices. HR is only beginning to catch up. Below are three foundational lessons — and how each one can change how we design programmes and decisions at work.</p>
+
+    <!-- Modern infographic: the BE Doodle reimagined -->
+    <div class="article-infographic">
+        <svg role="img" aria-label="Behavioral Economics Lessons for HR Professionals: three lessons (Default, Unknown Preferences, Irrational Groups) flowing through the River of Cognitive Biases toward Rational Decision Making and an Amazing Employee Experience via Design Thinking" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Background -->
+            <rect width="800" height="500" fill="#F8FAFC"/>
+
+            <!-- Title Banner -->
+            <rect width="800" height="64" fill="#0F172A"/>
+            <text x="28" y="27" fill="white" font-size="14" font-weight="700" font-family="'DM Sans',sans-serif" letter-spacing="0.06em">BEHAVIORAL ECONOMICS LESSONS</text>
+            <text x="28" y="50" fill="#F97316" font-size="14" font-weight="700" font-family="'DM Sans',sans-serif" letter-spacing="0.06em">FOR HR PROFESSIONALS</text>
+            <!-- Arrow in title -->
+            <rect x="694" y="30" width="36" height="4" fill="#F97316" rx="2"/>
+            <polygon points="728,22 762,32 728,42" fill="#F97316"/>
+
+            <!-- ─── LESSON 3: IRRATIONAL GROUPS ─────────── -->
+            <rect x="16" y="78" width="248" height="90" fill="#F59E0B" rx="10"/>
+            <circle cx="38" cy="103" r="13" fill="#D97706"/>
+            <text x="38" y="108" fill="white" font-size="12.5" font-weight="800" text-anchor="middle" font-family="'DM Sans',sans-serif">3</text>
+            <text x="58" y="101" fill="white" font-size="12" font-weight="700" font-family="'DM Sans',sans-serif">IRRATIONAL GROUPS</text>
+            <text x="24" y="124" fill="white" font-size="10.5" font-family="'DM Sans',sans-serif" opacity="0.93">Companies &amp; countries copy practices</text>
+            <text x="24" y="142" fill="white" font-size="10.5" font-family="'DM Sans',sans-serif" opacity="0.93">from others without questioning fit.</text>
+            <!-- Connector -->
+            <line x1="264" y1="123" x2="286" y2="123" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <polygon points="284,119 294,123 284,127" fill="#94A3B8"/>
+
+            <!-- ─── LESSON 2: UNKNOWN PREFERENCES ──────── -->
+            <rect x="16" y="192" width="248" height="90" fill="#10B981" rx="10"/>
+            <circle cx="38" cy="217" r="13" fill="#059669"/>
+            <text x="38" y="222" fill="white" font-size="12.5" font-weight="800" text-anchor="middle" font-family="'DM Sans',sans-serif">2</text>
+            <text x="58" y="215" fill="white" font-size="12" font-weight="700" font-family="'DM Sans',sans-serif">UNKNOWN PREFERENCES</text>
+            <text x="24" y="237" fill="white" font-size="10.5" font-family="'DM Sans',sans-serif" opacity="0.93">People construct preferences after</text>
+            <text x="24" y="255" fill="white" font-size="10.5" font-family="'DM Sans',sans-serif" opacity="0.93">the fact to rationalise past choices.</text>
+            <!-- Connector -->
+            <line x1="264" y1="237" x2="286" y2="237" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <polygon points="284,233 294,237 284,241" fill="#94A3B8"/>
+
+            <!-- ─── LESSON 1: DEFAULT ───────────────────── -->
+            <rect x="16" y="306" width="248" height="90" fill="#F97316" rx="10"/>
+            <circle cx="38" cy="331" r="13" fill="#EA580C"/>
+            <text x="38" y="336" fill="white" font-size="12.5" font-weight="800" text-anchor="middle" font-family="'DM Sans',sans-serif">1</text>
+            <text x="58" y="329" fill="white" font-size="12" font-weight="700" font-family="'DM Sans',sans-serif">DEFAULT</text>
+            <text x="24" y="351" fill="white" font-size="10.5" font-family="'DM Sans',sans-serif" opacity="0.93">When choices feel too complex,</text>
+            <text x="24" y="369" fill="white" font-size="10.5" font-family="'DM Sans',sans-serif" opacity="0.93">people follow the path of least resistance.</text>
+            <!-- Connector -->
+            <line x1="264" y1="351" x2="286" y2="351" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <polygon points="284,347 294,351 284,355" fill="#94A3B8"/>
+
+            <!-- ─── RIVER OF COGNITIVE BIASES ──────────── -->
+            <path d="M 308,64 C 298,160 320,240 308,340 C 296,440 310,470 302,500 L 362,500 C 362,470 348,440 360,340 C 372,240 352,160 368,64 Z" fill="#BAE6FD" stroke="#93C5FD" stroke-width="1"/>
+            <!-- River label (vertical) -->
+            <text transform="translate(335,430) rotate(-90)" fill="#1E40AF" font-size="9" font-weight="600" font-family="'DM Sans',sans-serif" letter-spacing="2" text-anchor="middle">THE RIVER OF COGNITIVE BIASES</text>
+            <!-- Boat hull -->
+            <ellipse cx="330" cy="284" rx="14" ry="5" fill="#1E40AF"/>
+            <!-- Mast -->
+            <line x1="330" y1="284" x2="330" y2="262" stroke="#334155" stroke-width="1.5"/>
+            <!-- Sail -->
+            <polygon points="330,262 348,280 330,280" fill="#F97316" opacity="0.82"/>
+
+            <!-- ─── RIGHT: GOAL + ARROW ─────────────────── -->
+            <!-- Mountain -->
+            <polygon points="583,85 656,190 510,190" fill="#0F172A" opacity="0.93"/>
+            <polygon points="583,85 601,120 565,120" fill="white" opacity="0.1"/>
+            <!-- Sun -->
+            <circle cx="690" cy="105" r="20" fill="#FEF08A"/>
+            <circle cx="690" cy="105" r="20" fill="none" stroke="#F97316" stroke-width="1.5"/>
+            <!-- Sun rays -->
+            <line x1="690" y1="77" x2="690" y2="62" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="714" y1="83" x2="727" y2="72" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="722" y1="107" x2="738" y2="107" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="714" y1="129" x2="727" y2="140" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="666" y1="83" x2="653" y2="72" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="658" y1="107" x2="642" y2="107" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Goal label -->
+            <text x="506" y="210" fill="#0F172A" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">AMAZING EMPLOYEE</text>
+            <text x="514" y="228" fill="#0F172A" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">EXPERIENCE</text>
+            <!-- Arrow head -->
+            <polygon points="544,234 580,206 616,234" fill="#0F172A"/>
+            <!-- Arrow body -->
+            <rect x="560" y="234" width="40" height="222" fill="#0F172A" rx="3"/>
+            <!-- Arrow label -->
+            <text transform="translate(580,360) rotate(-90)" fill="white" font-size="10.5" font-weight="700" font-family="'DM Sans',sans-serif" text-anchor="middle" letter-spacing="0.4">RATIONAL DECISION MAKING</text>
+            <!-- Design Thinking label -->
+            <text transform="translate(626,244) rotate(-35)" fill="#0F172A" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">DESIGN</text>
+            <text transform="translate(631,264) rotate(-35)" fill="#0F172A" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">THINKING</text>
+            <!-- Connector from river to arrow -->
+            <line x1="370" y1="262" x2="552" y2="262" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <polygon points="549,258 559,262 549,266" fill="#94A3B8"/>
+
+            <!-- Source note -->
+            <text x="28" y="488" fill="#94A3B8" font-size="8.5" font-family="'DM Sans',sans-serif">Originally published in HR Forum, December 2015 · Lucie Melicharová, Managing Director, learn2grow</text>
+        </svg>
+    </div>
+
+    <section class="article-section">
+        <h2 data-i18n="s1Title">1. The Power of Default</h2>
+        <p data-i18n="s1p1">Research on organ donor registration reveals a striking pattern: countries that use opt-out systems — where citizens are enrolled by default and must actively withdraw — have dramatically higher donation rates than those requiring active opt-in.</p>
+        <p data-i18n="s1p2">The implication for HR is powerful. When we design benefits enrolment, development programmes, or onboarding journeys, the default state matters enormously. People tend not to deviate from whichever option requires no action.</p>
+        <p data-i18n="s1p3">Rather than designing processes that require employees to actively choose participation — and then wondering why uptake is low — HR can design defaults that serve people's interests. The choice architecture is the policy.</p>
+    </section>
+
+    <section class="article-section">
+        <h2 data-i18n="s2Title">2. Unknown Preferences</h2>
+        <p data-i18n="s2p1">We like to believe that people choose things because they know what they want. In practice, preferences are often constructed after the decision has already been made — as a rationalisation rather than a reason.</p>
+        <p data-i18n="s2p2">Once people commit to a position, they tend to reinforce it rather than question it. This has important implications for both change management and culture work. If people believe they are who they are, changing behaviour requires more than information — it requires creating experiences that shift identity.</p>
+        <p data-i18n="s2p3">HR professionals can use this insight by focusing on observation and empathy rather than surveys and focus groups. What people say they want is often less reliable than what they actually do when placed in well-designed situations.</p>
+    </section>
+
+    <section class="article-section">
+        <h2 data-i18n="s3Title">3. Groups and Organisations</h2>
+        <p data-i18n="s3p1">Individuals exhibit cognitive biases — and so do organisations. Companies and countries often copy management practices from one another without questioning whether those practices actually fit their context.</p>
+        <p data-i18n="s3p2">The phenomenon of adopting "best practices" regardless of fit is a form of organisational irrationality. When faced with complex decisions, organisations, like individuals, look for shortcuts — and they find them in benchmarks, peer companies, and consulting reports.</p>
+        <p data-i18n="s3p3">For HR, this means being critical of imported frameworks. The question is not "what are leading companies doing?" but "what actually works for our people, our culture, and our strategy?"</p>
+    </section>
+
+    <section class="article-section">
+        <h2 data-i18n="applyTitle">Applying These Lessons</h2>
+        <p data-i18n="applyP1">Behavioral economics does not offer simple formulaic solutions. But it does show us where human behaviour systematically diverges from what pure rationality would predict — and that is exactly where design interventions can have the greatest impact.</p>
+        <p data-i18n="applyP2">There are two broad approaches. The first is to help people make more rational decisions — by simplifying choices, removing friction, and surfacing relevant information at the right moments. The second is to design HR programmes that account for the biases we know exist, rather than programmes that assume rational actors.</p>
+        <p data-i18n="applyP3">Methods such as Design Thinking and Service Design are well suited to this challenge. They shift the focus from what HR wants to deliver to what employees actually experience — and that shift changes everything.</p>
+    </section>
+
+    <div class="article-conclusion">
+        <h2 data-i18n="conclusionTitle">Conclusion</h2>
+        <p data-i18n="conclusionP1">Behavioral economics does not replace rigorous data analysis in HR.</p>
+        <p data-i18n="conclusionP2">It complements it — by adding a deeper understanding of how and why people actually behave the way they do.</p>
+        <p data-i18n="conclusionP3">Organisations that combine analytical rigour with behavioral insight will be better equipped to design employee experiences that genuinely work.</p>
+    </div>
+
+    <p class="article-source" data-i18n="source">Originally published in HR Forum, December 2015 · Lucie Melicharová, Managing Director, learn2grow</p>
+</article>
+
+<!-- Cookie Consent Banner -->
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <p><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
+            <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Accept</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="contact" style="background: #F8FAFC; color: var(--text); padding: 4rem 0 2rem 0;">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+        <div class="footer-grid">
+            <div>
+                <img src="/images/Logo.jpeg" alt="learn2grow" style="height: 60px; margin-bottom: 2rem; border-radius: 8px;" />
+                <div style="color: var(--text); line-height: 1.8;">
+                    <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">learn2grow s. r. o.</strong></p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Prague, Czech Republic</p>
+                    <p style="margin-bottom: 0.5rem; color: var(--text-light);">(+420) 773 923 402</p>
+                    <p style="color: var(--text-light);">info@learn2grow.cz</p>
+                </div>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerServices">Services</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.75rem;"><a href="/#headhunting" class="footer-link" data-i18n="headhuntingTitle">Headhunting</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="/#hr-consulting" class="footer-link" data-i18n="hrTitle">HR Consulting</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerCompany">Company</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.75rem;"><a href="/#about" class="footer-link" data-i18n="footerAbout">About Us</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="/#team" class="footer-link" data-i18n="footerTeam">Team</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="/insights" class="footer-link" data-i18n="footerInsights">Insights</a></li>
+                    <li style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <p style="color: var(--text-light); font-size: 0.9rem; line-height: 1.6; margin: 0;">
+                            <span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span>
+                            <a href="/privacy-policy" style="color: var(--orange); text-decoration: underline;" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; border-top: 1px solid var(--border);">
+            <p style="color: var(--text-light); font-size: 0.9rem;" data-i18n="copyright">Copyright © 2002–2026 learn2grow</p>
+            <div style="display: flex; gap: 1rem;">
+                <a href="https://www.linkedin.com/company/learn2grow" target="_blank" rel="noopener noreferrer" aria-label="Visit learn2grow on LinkedIn" class="social-btn">in</a>
+                <a href="mailto:info@learn2grow.cz" aria-label="Send email to learn2grow" class="social-btn">✉</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</Layout>
+
+<style is:global>
+nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 1000; padding: 1rem 0; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+nav.scrolled { padding: 0.75rem 0; background: rgba(255,255,255,0.95); box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 200px 1fr 200px; align-items: center; gap: 2rem; }
+.nav-container .logo { justify-self: start; }
+.nav-container .nav-links { justify-self: center; }
+.nav-container .language-toggle { justify-self: end; }
+.logo { display: block; height: 48px; transition: height 0.3s ease; }
+nav.scrolled .logo { height: 36px; }
+.logo img { height: 100%; width: auto; object-fit: contain; }
+.nav-links { display: flex; gap: 2.25rem; list-style: none; justify-content: center; }
+.nav-links a { color: var(--text); text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; transition: all 0.3s ease; position: relative; padding-bottom: 4px; }
+.nav-links a::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: linear-gradient(90deg, var(--orange), #EA580C); border-radius: 2px; transition: width 0.4s ease; }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+.nav-links a.active { font-weight: 600; }
+.language-toggle { display: flex; gap: 0.5rem; align-items: center; }
+.lang-btn { padding: 0.5rem 1rem; background: transparent; border: 1px solid var(--text-light); border-radius: 6px; color: var(--text); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-family: 'DM Sans', sans-serif; }
+.lang-btn:hover { border-color: var(--primary); color: var(--primary); }
+.lang-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* Article Header */
+.article-header { margin-top: 70px; background: linear-gradient(135deg, #fff, #ffe8d1); padding: 5rem 2rem 3rem; text-align: center; }
+.article-category-badge { display: inline-block; padding: 0.5rem 1.2rem; background: var(--orange); color: #fff; font-size: 0.8rem; font-weight: 600; border-radius: 20px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; }
+.article-title { font-family: 'DM Sans', sans-serif; font-size: 3.5rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; line-height: 1.2; }
+.article-subtitle { font-size: 1.5rem; color: var(--text-light); font-style: italic; margin-bottom: 1.5rem; }
+.article-meta { font-size: 0.95rem; color: var(--text-light); }
+
+/* Article Body */
+.article-content { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+.back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--orange); text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: gap 0.3s ease; }
+.back-link:hover { gap: 0.75rem; }
+.article-image { margin: 2rem 0 3rem; text-align: center; }
+.article-image img { width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.article-intro { font-size: 1.2rem; line-height: 1.8; color: var(--text); margin-bottom: 3rem; padding: 2rem; background: #fff; border-left: 4px solid var(--orange); border-radius: 8px; }
+.article-lead { font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 2.5rem; }
+
+/* Infographic */
+.article-infographic { margin: 2.5rem 0 3rem; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+.article-infographic svg { display: block; width: 100%; height: auto; }
+
+/* Article Sections */
+.article-section { margin-bottom: 3rem; }
+.article-section h2 { font-family: 'DM Sans', sans-serif; font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem; line-height: 1.3; }
+.article-section p { font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+.article-section ul { margin: 1.5rem 0 1.5rem 2rem; list-style: none; }
+.article-section ul li { font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 0.75rem; position: relative; padding-left: 1.5rem; }
+.article-section ul li::before { content: "•"; position: absolute; left: 0; color: var(--orange); font-weight: 700; font-size: 1.5rem; }
+
+/* Conclusion */
+.article-conclusion { margin-top: 4rem; padding: 2.5rem; background: linear-gradient(135deg, #fff7ed, #ffedd5); border-radius: 12px; }
+.article-conclusion h2 { font-family: 'DM Sans', sans-serif; font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem; }
+.article-conclusion p { font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 0.75rem; }
+
+/* Source note */
+.article-source { font-size: 0.9rem; color: var(--text-light); margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+
+/* Footer */
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+.footer-link { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; }
+.footer-link:hover { color: var(--orange); }
+.social-btn { width: 44px; height: 44px; background: white; border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; }
+.social-btn:hover { background: var(--orange); border-color: var(--orange); color: white; transform: translateY(-3px); }
+
+/* Cookie Banner */
+.cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(30,30,30,0.98); backdrop-filter: blur(10px); color: #fff; padding: 1.5rem 2rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); z-index: 10000; display: none; animation: slideUp 0.4s ease-out; }
+.cookie-banner.show { display: block; }
+@keyframes slideUp { 0% { transform: translateY(100%); } 100% { transform: translateY(0); } }
+.cookie-content { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cookie-text { flex: 1; min-width: 300px; }
+.cookie-text p { margin: 0; font-size: 0.95rem; line-height: 1.6; opacity: 0.9; }
+.cookie-text a { color: var(--orange); text-decoration: underline; }
+.cookie-buttons { display: flex; gap: 1rem; flex-shrink: 0; }
+.cookie-btn { padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; font-family: 'DM Sans', sans-serif; }
+.cookie-btn--accept { background: var(--orange); color: #fff; }
+.cookie-btn--accept:hover { background: #ea580c; transform: translateY(-2px); }
+.cookie-btn--decline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+.cookie-btn--decline:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.1); }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .article-title { font-size: 2.5rem; }
+    .article-subtitle { font-size: 1.2rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 768px) {
+    .nav-container { grid-template-columns: 1fr auto; }
+    .nav-links { display: none; }
+    .cookie-content { flex-direction: column; text-align: center; }
+    .cookie-buttons { width: 100%; justify-content: center; }
+}
+</style>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn') as NodeListOf<HTMLButtonElement>;
+let currentLang: string = localStorage.getItem('language') || 'en';
+
+const translations: Record<string, Record<string, string>> = {
+    en: {
+        navHeadhunting: 'HEADHUNTING', navHRConsulting: 'HR CONSULTING',
+        navAboutUs: 'ABOUT US', navInsights: 'INSIGHTS', navContact: 'CONTACT',
+        headhuntingTitle: 'Headhunting', hrTitle: 'HR Consulting',
+        footerServices: 'Services', footerCompany: 'Company',
+        footerAbout: 'About Us', footerTeam: 'Team', footerInsights: 'Insights',
+        copyright: 'Copyright © 2002–2026 learn2grow',
+        privacyText: 'We respect high standards of privacy protection. Read more about our',
+        privacyLink: 'Privacy Policy and Cookie Statement',
+        // Article header
+        articleCategory: 'Articles',
+        articleTitle: 'HR Lessons from Behavioral Economics',
+        articleSubtitle: 'How the science of human decision-making can transform the employee experience',
+        articleDate: 'April 1, 2016',
+        backToInsights: 'Back to Insights',
+        // Article body
+        articleIntro: 'Data has given us unprecedented ability to understand human behaviour. Yet meaningful interpretation remains elusive — because human behaviour is often irrational. Behavioral economics offers HR professionals a new lens: a bridge between the rational analytical world and the often inconsistent reality of how people actually make decisions.',
+        articleLead: 'Marketing professionals have long used behavioral economics to shape consumer choices. HR is only beginning to catch up. Below are three foundational lessons — and how each one can change how we design programmes and decisions at work.',
+        // Sections
+        s1Title: '1. The Power of Default',
+        s1p1: 'Research on organ donor registration reveals a striking pattern: countries that use opt-out systems — where citizens are enrolled by default and must actively withdraw — have dramatically higher donation rates than those requiring active opt-in.',
+        s1p2: 'The implication for HR is powerful. When we design benefits enrolment, development programmes, or onboarding journeys, the default state matters enormously. People tend not to deviate from whichever option requires no action.',
+        s1p3: 'Rather than designing processes that require employees to actively choose participation — and then wondering why uptake is low — HR can design defaults that serve people\'s interests. The choice architecture is the policy.',
+        s2Title: '2. Unknown Preferences',
+        s2p1: 'We like to believe that people choose things because they know what they want. In practice, preferences are often constructed after the decision has already been made — as a rationalisation rather than a reason.',
+        s2p2: 'Once people commit to a position, they tend to reinforce it rather than question it. This has important implications for both change management and culture work. If people believe they are who they are, changing behaviour requires more than information — it requires creating experiences that shift identity.',
+        s2p3: 'HR professionals can use this insight by focusing on observation and empathy rather than surveys and focus groups. What people say they want is often less reliable than what they actually do when placed in well-designed situations.',
+        s3Title: '3. Groups and Organisations',
+        s3p1: 'Individuals exhibit cognitive biases — and so do organisations. Companies and countries often copy management practices from one another without questioning whether those practices actually fit their context.',
+        s3p2: 'The phenomenon of adopting "best practices" regardless of fit is a form of organisational irrationality. When faced with complex decisions, organisations, like individuals, look for shortcuts — and they find them in benchmarks, peer companies, and consulting reports.',
+        s3p3: 'For HR, this means being critical of imported frameworks. The question is not "what are leading companies doing?" but "what actually works for our people, our culture, and our strategy?"',
+        applyTitle: 'Applying These Lessons',
+        applyP1: 'Behavioral economics does not offer simple formulaic solutions. But it does show us where human behaviour systematically diverges from what pure rationality would predict — and that is exactly where design interventions can have the greatest impact.',
+        applyP2: 'There are two broad approaches. The first is to help people make more rational decisions — by simplifying choices, removing friction, and surfacing relevant information at the right moments. The second is to design HR programmes that account for the biases we know exist, rather than programmes that assume rational actors.',
+        applyP3: 'Methods such as Design Thinking and Service Design are well suited to this challenge. They shift the focus from what HR wants to deliver to what employees actually experience — and that shift changes everything.',
+        // Conclusion
+        conclusionTitle: 'Conclusion',
+        conclusionP1: 'Behavioral economics does not replace rigorous data analysis in HR.',
+        conclusionP2: 'It complements it — by adding a deeper understanding of how and why people actually behave the way they do.',
+        conclusionP3: 'Organisations that combine analytical rigour with behavioral insight will be better equipped to design employee experiences that genuinely work.',
+        source: 'Originally published in HR Forum, December 2015 · Lucie Melicharová, Managing Director, learn2grow',
+    },
+    cs: {
+        navHeadhunting: 'HEADHUNTING', navHRConsulting: 'HR PORADENSTVÍ',
+        navAboutUs: 'O NÁS', navInsights: 'NOVINKY', navContact: 'KONTAKT',
+        headhuntingTitle: 'Headhunting', hrTitle: 'HR Poradenství',
+        footerServices: 'Služby', footerCompany: 'Společnost',
+        footerAbout: 'O nás', footerTeam: 'Tým', footerInsights: 'Novinky',
+        copyright: 'Copyright © 2002–2026 learn2grow',
+        privacyText: 'Respektujeme vysoké standardy ochrany soukromí. Přečtěte si více o naší',
+        privacyLink: 'Politice ochrany osobních údajů a cookies',
+        // Article header
+        articleCategory: 'Články',
+        articleTitle: 'Poznatky z behaviorální ekonomie pro HR',
+        articleSubtitle: 'Jak věda o lidském rozhodování může transformovat zkušenost zaměstnanců',
+        articleDate: '1. dubna 2016',
+        backToInsights: 'Zpět na novinky',
+        // Article body
+        articleIntro: 'Data nám dávají bezprecedentní možnost porozumět lidskému chování. Přesto zůstává jejich smysluplná interpretace složitou výzvou — lidské chování je totiž nepředvídatelné a zdaleka ne vždy racionální. Behaviorální ekonomie nabízí HR profesionálům nový pohled: most mezi analytickým světem a iracionální realitou toho, jak lidé skutečně rozhodují.',
+        articleLead: 'Marketingoví odborníci využívají behaviorální ekonomii k ovlivňování spotřebitelského chování už dlouho. HR teprve dohání ztracené. Níže jsou tři základní poznatky — a jak každý z nich může změnit způsob, jakým navrhujeme programy a rozhodnutí na pracovišti.',
+        // Sections
+        s1Title: '1. Síla výchozích nastavení',
+        s1p1: 'Výzkum registrace dárců orgánů odhaluje překvapivý vzorec: země, které používají systém opt-out — kde jsou občané zapsáni automaticky a musí aktivně vystoupit — mají dramaticky vyšší míru dárcovství než ty, které vyžadují aktivní přihlášení.',
+        s1p2: 'Dopad na HR je zásadní. Když navrhujeme přihlašování k benefitům, rozvojové programy nebo onboardingové cesty, výchozí stav hraje obrovskou roli. Lidé mají tendenci neodchylovat se od té možnosti, která nevyžaduje žádnou akci.',
+        s1p3: 'Místo navrhování procesů, které vyžadují, aby se zaměstnanci aktivně rozhodli pro účast — a pak se divit, proč je zájem nízký — může HR navrhovat výchozí nastavení, která slouží zájmům lidí. Architektura volby je sama o sobě politikou.',
+        s2Title: '2. Neznámé preference',
+        s2p1: 'Rádi si myslíme, že lidé si věci vybírají, protože vědí, co chtějí. V praxi jsou ale preference často konstruovány až po tom, co bylo rozhodnutí učiněno — jako racionalizace, nikoliv jako důvod.',
+        s2p2: 'Jakmile se lidé zaváží k určité pozici, mají tendenci ji posilovat, nikoliv zpochybňovat. To má důležité důsledky pro řízení změn i pro práci s kulturou. Pokud lidé věří, že jsou takoví, jací jsou, změna chování vyžaduje víc než informace — vyžaduje zkušenosti, které mění identitu.',
+        s2p3: 'HR profesionálé mohou tento poznatek využít zaměřením se na pozorování a empatii spíše než na průzkumy a focus skupiny. To, co lidé říkají, že chtějí, je často méně spolehlivé než to, co skutečně dělají, když jsou ve správně navržených situacích.',
+        s3Title: '3. Skupiny a organizace',
+        s3p1: 'Kognitivní zkreslení nevykazují jen jednotlivci — ale i organizace. Firmy a země si od sebe navzájem přejímají manažerské praktiky, aniž by zpochybňovaly, zda tyto praktiky vůbec odpovídají jejich kontextu.',
+        s3p2: 'Přejímání „best practices" bez ohledu na vhodnost je formou organizační iracionality. Když čelí složitým rozhodnutím, hledají organizace, stejně jako jednotlivci, zkratky — a nacházejí je v benchmarkových studiích, peer firmách a poradenských zprávách.',
+        s3p3: 'Pro HR to znamená být kritický k importovaným rámcům. Otázka není „co dělají přední společnosti?", ale „co skutečně funguje pro naše lidi, naši kulturu a naši strategii?"',
+        applyTitle: 'Jak tyto poznatky aplikovat',
+        applyP1: 'Behaviorální ekonomie nenabízí jednoduché formulaické recepty. Ale ukazuje nám, kde se lidské chování systematicky odchyluje od toho, co by předpověděla čistá racionalita — a právě tam mohou mít designové intervence největší dopad.',
+        applyP2: 'Existují dva základní přístupy. První je pomáhat lidem přijímat racionálnější rozhodnutí — zjednodušením voleb, odstraněním třecích ploch a zpřístupněním relevantních informací ve správný moment. Druhý je navrhovat HR programy, které počítají se zkreslením, o kterém víme, že existuje — nikoliv programy, které předpokládají racionální aktéry.',
+        applyP3: 'Metody jako Design Thinking nebo Service Design jsou pro tuto výzvu vhodné. Přesouvají pozornost od toho, co chce HR dodat, na to, co zaměstnanci skutečně zažívají — a toto přesunutí mění vše.',
+        // Conclusion
+        conclusionTitle: 'Závěr',
+        conclusionP1: 'Behaviorální ekonomie nenahrazuje důkladnou datovou analýzu v HR.',
+        conclusionP2: 'Doplňuje ji — přidáním hlubšího porozumění tomu, jak a proč se lidé skutečně chovají tak, jak se chovají.',
+        conclusionP3: 'Organizace, které kombinují analytickou přísnost s behaviorálními poznatky, budou lépe vybaveny pro navrhování zkušeností zaměstnanců, které skutečně fungují.',
+        source: 'Původně publikováno v HR Forum, prosinec 2015 · Lucie Melicharová, Managing Director, learn2grow',
+    }
+};
+
+function setLanguage(lang: string): void {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    langBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+    const t = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n')!;
+        if (t[key]) el.innerHTML = t[key];
+    });
+}
+langBtns.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang!)));
+setLanguage(currentLang);
+
+window.addEventListener('scroll', () => {
+    document.querySelector('nav')!.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+const cookieBanner = document.getElementById('cookieBanner')!;
+if (!localStorage.getItem('cookieConsent')) setTimeout(() => cookieBanner.classList.add('show'), 1000);
+document.getElementById('cookieAccept')!.addEventListener('click', () => { localStorage.setItem('cookieConsent', 'accepted'); cookieBanner.classList.remove('show'); });
+document.getElementById('cookieDecline')!.addEventListener('click', () => { localStorage.setItem('cookieConsent', 'declined'); cookieBanner.classList.remove('show'); });
+</script>
