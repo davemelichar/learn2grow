@@ -1,5 +1,4 @@
 [build]
-  base = "l2gweb"
   command = "npm run build"
   publish = "dist"
 
