@@ -1,0 +1,838 @@
+---
+// Article: Leadership Through the Eyes of AI
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Through the Eyes of AI - learn2grow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0F172A;
+            --secondary: #1E293B;
+            --accent: #F97316;
+            --orange: #F97316;
+            --light: #ffffff;
+            --text: #334155;
+            --text-light: #64748B;
+            --surface: #F8FAFC;
+            --border: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background: var(--surface);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Focus States for Accessibility */
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid var(--orange);
+            outline-offset: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            padding: 0.75rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-container .logo {
+            flex-shrink: 0;
+            justify-self: start;
+        }
+        
+        .nav-container .nav-links {
+            justify-self: center;
+        }
+        
+        .nav-container .language-toggle {
+            flex-shrink: 0;
+            justify-self: end;
+        }
+
+        .logo {
+            display: block;
+            height: 48px;
+            transition: height 0.3s ease;
+        }
+
+        nav.scrolled .logo {
+            height: 36px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.25rem;
+            list-style: none;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--orange), #EA580C);
+            border-radius: 2px;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .language-toggle {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--text-light);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #ffffff 0%, #ffe8d1 100%);
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .article-category-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: var(--orange);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-meta {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .article-intro {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-left: 4px solid var(--orange);
+            border-radius: 8px;
+        }
+
+        .article-image {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .article-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .article-section {
+            margin-bottom: 3rem;
+        }
+
+        .article-section h2 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .article-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-section ul {
+            margin: 1.5rem 0 1.5rem 2rem;
+            list-style: none;
+        }
+
+        .article-section ul li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .article-section ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .article-conclusion {
+            margin-top: 4rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+            border-radius: 12px;
+        }
+
+        .article-conclusion h2 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-conclusion p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Back Button */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: gap 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 6rem 2rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--orange);
+        }
+
+        .footer-contact p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .social-links a {
+            width: 80px;
+            height: 80px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            font-size: 2rem;
+        }
+
+        .social-links a:hover {
+            background: #ea580c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.6;
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 30, 30, 0.98);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            z-index: 10000;
+            display: none;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        .cookie-banner.show {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .cookie-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .cookie-text p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .cookie-text a {
+            color: var(--orange);
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .cookie-btn.accept {
+            background: var(--orange);
+            color: white;
+        }
+
+        .cookie-btn.accept:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+        }
+
+        .cookie-btn.decline {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .cookie-btn.decline:hover {
+            border-color: rgba(255,255,255,0.6);
+            background: rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .article-title {
+                font-size: 2.5rem;
+            }
+
+            .article-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .article-image img {
+                max-width: 100%;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo" id="logo-link">
+                <img src="/images/Logo.jpeg" alt="learn2grow">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/#headhunting" data-i18n="navHeadhunting">HEADHUNTING</a></li>
+                <li><a href="/#hr-consulting" data-i18n="navHRConsulting">HR CONSULTING</a></li>
+                <li><a href="/#about" data-i18n="navAboutUs">ABOUT US</a></li>
+                <li><a href="/#insights" data-i18n="navInsights">INSIGHTS</a></li>
+                <li><a href="/#contact" data-i18n="navContact">CONTACT</a></li>
+            </ul>
+            <div class="language-toggle">
+                <button class="lang-btn" data-lang="cs">CZ</button>
+                <button class="lang-btn active" data-lang="en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <span class="article-category-badge">Articles</span>
+        <h1 class="article-title">Leadership Through the Eyes of AI</h1>
+        <p class="article-subtitle">How artificial intelligence would change corporate leadership</p>
+        <p class="article-meta">January 26, 2026</p>
+    </header>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <a href="/insights" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Insights
+        </a>
+
+        <div class="article-intro">
+            <p>AI is taking hold in companies, and managers often have high expectations of AI. But what does AI actually expect from leaders? We asked, and the answer is quite interesting: If artificial intelligence set out to change corporate leadership, it would not start with technology. It would start with how leaders think.</p>
+        </div>
+
+        <div class="article-image">
+            <img src="/images/article1.jpg" alt="Leadership Through the Eyes of AI">
+        </div>
+
+        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 3rem;">From an AI perspective, most organizational problems are not caused by a lack of data, tools, or talent — but by unclear thinking, avoidance of responsibility, and an inability to work with uncertainty. Below are five areas where an "AI view" of leadership would focus on meaningful change.</p>
+
+        <section class="article-section">
+            <h2>Fewer words, more structure</h2>
+            <p>The first goal would be to sharpen leadership thinking.</p>
+            <p>Strategies, priorities, and decisions are often expressed vaguely — leaving room for reinterpretation and excuses.</p>
+            <p>AI does not work with ambiguity of this kind. Either a goal is defined, or it is not. Either constraints and trade-offs are explicit, or the decision is incomplete.</p>
+            <p>Future leadership will rely less on inspiring language and more on the ability to:</p>
+            <ul>
+                <li>define objectives clearly,</li>
+                <li>separate facts from assumptions,</li>
+                <li>and assign responsibility unambiguously.</li>
+            </ul>
+        </section>
+
+        <section class="article-section">
+            <h2>Stop pretending certainty, start managing uncertainty</h2>
+            <p>Many leaders confuse authority with certainty. In an effort to appear decisive, they hide uncertainty — and increase the risk of poor decisions.</p>
+            <p>From an AI perspective, uncertainty is not a weakness but a natural system state. What matters is not "knowing," but:</p>
+            <ul>
+                <li>framing decisions as hypotheses,</li>
+                <li>working with scenarios,</li>
+                <li>and being willing to revise decisions when conditions change.</li>
+            </ul>
+            <p>Strong leaders are not those who never change their minds, but those who change them early enough.</p>
+        </section>
+
+        <section class="article-section">
+            <h2>Responsibility instead of control</h2>
+            <p>Control is often a substitute for trust and clarity.</p>
+            <p>The more complex an organization becomes, the less effective micromanagement is.</p>
+            <p>An AI-driven approach to leadership would push for:</p>
+            <ul>
+                <li>clear decision rights,</li>
+                <li>minimal approval layers,</li>
+                <li>and outcome-based evaluation instead of activity tracking.</li>
+            </ul>
+            <p>Organizations do not need more control. They need less unclear responsibility.</p>
+        </section>
+
+        <section class="article-section">
+            <h2>Better decisions about people</h2>
+            <p>One of leadership's biggest blind spots lies in people decisions. Despite their long-term impact, hiring and promotion choices are often made intuitively, under pressure, or out of habit.</p>
+            <p>AI would shift focus away from "gut feeling" toward:</p>
+            <ul>
+                <li>distinguishing performance from potential,</li>
+                <li>assessing learning and adaptability,</li>
+                <li>and identifying early warning signs of failure.</li>
+            </ul>
+            <p>Poor people decisions are often more expensive than poor strategic ones — their consequences simply appear later.</p>
+        </section>
+
+        <section class="article-section">
+            <h2>Long-term thinking in a short-term world</h2>
+            <p>Systems tend to reward fast results and penalize sustainability.</p>
+            <p>The outcome is burnout, erosion of trust, and accumulated risk.</p>
+            <p>AI would continuously surface the long-term implications of leadership decisions:</p>
+            <ul>
+                <li>what happens if this approach is repeated,</li>
+                <li>what kind of debt it creates,</li>
+                <li>and who will ultimately pay for it.</li>
+            </ul>
+            <p>Leadership is not about optimizing a quarter — it is about sustaining the whole system.</p>
+        </section>
+
+        <div class="article-conclusion">
+            <h2>Conclusion</h2>
+            <p>If AI were to change leadership, it would not try to replace leaders.</p>
+            <p>It would try to make them more precise.</p>
+            <p>Fewer illusions.</p>
+            <p>More structure.</p>
+            <p>Greater accountability.</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer id="contact" style="background: #F8FAFC; color: var(--text); padding: 4rem 0 2rem 0;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem;">
+                <div>
+                    <img src="/images/Logo.jpeg" alt="learn2grow" style="height: 60px; margin-bottom: 2rem; border-radius: 8px;">
+                    <div style="color: var(--text); line-height: 1.8;">
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">learn2grow s. r. o.</strong></p>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">Prague, Czech Republic</p>
+                        <p style="margin-bottom: 0.5rem; color: var(--text-light);">(+420) 773 923 402</p>
+                        <p style="color: var(--text-light);">info@learn2grow.cz</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerServices">Services</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="/#headhunting" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-light)'" data-i18n="headhuntingTitle">Headhunting</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="/#hr-consulting" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-light)'" data-i18n="hrTitle">HR Consulting</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerCompany">Company</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="/#about" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-light)'" data-i18n="footerAbout">About Us</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="/#team" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-light)'" data-i18n="footerTeam">Team</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="/#insights" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-light)'" data-i18n="footerInsights">Insights</a></li>
+                        <li style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);"><p style="color: var(--text-light); font-size: 0.9rem; line-height: 1.6; margin: 0;"><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" style="color: var(--orange); text-decoration: underline; transition: color 0.3s ease;" onmouseover="this.style.color='#ea580c'" onmouseout="this.style.color='var(--orange)'" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; border-top: 1px solid var(--border);">
+                <p style="color: var(--text-light); font-size: 0.9rem;" data-i18n="copyright">Copyright © 2002–2026 learn2grow</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://www.linkedin.com/company/learn2grow" target="_blank" rel="noopener noreferrer" aria-label="Visit learn2grow on LinkedIn" style="width: 44px; height: 44px; background: white; border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.background='var(--orange)'; this.style.borderColor='var(--orange)'; this.style.color='white'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='white'; this.style.borderColor='var(--border)'; this.style.color='var(--primary)'; this.style.transform='translateY(0)'">in</a>
+                    <a href="mailto:info@learn2grow.cz" aria-label="Send email to learn2grow" style="width: 44px; height: 44px; background: white; border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); text-decoration: none; font-size: 1.3rem; transition: all 0.3s ease;" onmouseover="this.style.background='var(--orange)'; this.style.borderColor='var(--orange)'; this.style.color='white'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='white'; this.style.borderColor='var(--border)'; this.style.color='var(--primary)'; this.style.transform='translateY(0)'">✉</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" style="color: var(--orange); text-decoration: underline;" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn decline" id="cookieDecline">Decline</button>
+                <button class="cookie-btn accept" id="cookieAccept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language toggle functionality
+        const langBtns = document.querySelectorAll('.lang-btn');
+        let currentLang = localStorage.getItem('language') || 'en';
+        
+        const translations = {
+            en: {
+                navHeadhunting: 'HEADHUNTING',
+                navHRConsulting: 'HR CONSULTING',
+                navAboutUs: 'ABOUT US',
+                navInsights: 'INSIGHTS',
+                navContact: 'CONTACT',
+                headhuntingTitle: 'Headhunting',
+                hrTitle: 'HR Consulting',
+                footerServices: 'Services',
+                footerCompany: 'Company',
+                footerAbout: 'About Us',
+                footerTeam: 'Team',
+                footerInsights: 'Insights',
+                copyright: 'Copyright © 2002–2026 learn2grow',
+                privacyText: 'We respect high standards of privacy protection. Read more about our',
+                privacyLink: 'Privacy Policy and Cookie Statement'
+            },
+            cs: {
+                navHeadhunting: 'HEADHUNTING',
+                navHRConsulting: 'HR PORADENSTVÍ',
+                navAboutUs: 'O NÁS',
+                navInsights: 'NOVINKY',
+                navContact: 'KONTAKT',
+                headhuntingTitle: 'Headhunting',
+                hrTitle: 'HR Poradenství',
+                footerServices: 'Služby',
+                footerCompany: 'Společnost',
+                footerAbout: 'O nás',
+                footerTeam: 'Tým',
+                footerInsights: 'Novinky',
+                copyright: 'Copyright © 2002–2026 learn2grow',
+                privacyText: 'Respektujeme vysoké standardy ochrany soukromí. Přečtěte si více o naší',
+                privacyLink: 'Politice ochrany osobních údajů a cookies'
+            }
+        };
+        
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            langBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            
+            // Apply translations
+            const t = translations[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'BUTTON') {
+                        el.value = t[key];
+                    } else {
+                        el.innerHTML = t[key];
+                    }
+                }
+            });
+        }
+        
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+        
+        // Initialize language on page load
+        setLanguage(currentLang);
+
+        // Google Analytics Setup
+        function loadGoogleAnalytics() {
+            // Replace 'G-XXXXXXXXXX' with your actual Google Analytics Measurement ID
+            const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+            
+            // Load Google Analytics script
+            const script1 = document.createElement('script');
+            script1.async = true;
+            script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+            document.head.appendChild(script1);
+            
+            // Initialize Google Analytics
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID);
+            
+            console.log('Google Analytics loaded');
+        }
+
+        // Cookie Consent Banner
+        const cookieBanner = document.getElementById('cookieBanner');
+        const cookieAccept = document.getElementById('cookieAccept');
+        const cookieDecline = document.getElementById('cookieDecline');
+
+        // Check if user has already made a choice
+        const cookieConsent = localStorage.getItem('cookieConsent');
+        if (cookieConsent === 'accepted') {
+            // User previously accepted - load analytics
+            loadGoogleAnalytics();
+        } else if (!cookieConsent) {
+            // No choice made yet - show banner
+            setTimeout(() => {
+                cookieBanner.classList.add('show');
+            }, 1000);
+        }
+
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.remove('show');
+            loadGoogleAnalytics();
+        });
+
+        cookieDecline.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieBanner.classList.remove('show');
+        });
+
+        // Navbar scroll effect
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | learn2grow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0F172A;
+            --secondary: #1E293B;
+            --accent: #F97316;
+            --orange: #F97316;
+            --light: #ffffff;
+            --text: #334155;
+            --text-light: #64748B;
+            --surface: #F8FAFC;
+            --border: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background: var(--surface);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Focus States for Accessibility */
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid var(--orange);
+            outline-offset: 2px;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--orange);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        #backToTop.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #backToTop:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            padding: 0.75rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-container .logo {
+            flex-shrink: 0;
+            justify-self: start;
+        }
+        
+        .nav-container .nav-links {
+            justify-self: center;
+        }
+        
+        .nav-container .language-toggle {
+            flex-shrink: 0;
+            justify-self: end;
+        }
+
+        .logo {
+            display: block;
+            height: 48px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            display: block;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .language-toggle {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--text-light);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Main Content */
+        .privacy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem 2rem;
+        }
+
+        .privacy-content h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .privacy-content h2 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content p {
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .privacy-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .privacy-content li {
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .privacy-content a {
+            color: var(--orange);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .privacy-content a:hover {
+            color: #ea580c;
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 900px) {
+            .nav-container {
+                grid-template-columns: 1fr auto;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .language-toggle {
+                justify-self: end;
+            }
+
+            .privacy-content {
+                padding: 6rem 1.5rem 3rem 1.5rem;
+            }
+
+            .privacy-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .privacy-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #F8FAFC;
+            color: var(--text);
+            padding: 4rem 0 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="/images/Logo.jpeg" alt="learn2grow">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/#headhunting" data-i18n="navHeadhunting">HEADHUNTING</a></li>
+                <li><a href="/#hr-consulting" data-i18n="navHRConsulting">HR CONSULTING</a></li>
+                <li><a href="/#about" data-i18n="navAboutUs">ABOUT US</a></li>
+                <li><a href="/#insights" data-i18n="navInsights">INSIGHTS</a></li>
+                <li><a href="/#contact" data-i18n="navContact">CONTACT</a></li>
+            </ul>
+            <div class="language-toggle">
+                <button class="lang-btn" data-lang="cs">CZ</button>
+                <button class="lang-btn active" data-lang="en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Privacy Policy Content -->
+    <div class="privacy-content">
+        <div id="content-en">
+            <h1>Privacy Policy and Cookie Statement</h1>
+            
+            <p>Protecting your personal information has been always one of our priorities. When we process your information, we respect high standards of privacy protection and comply with the principles of clear purpose, transparency and retention of the data only for the time necessary for the purpose.</p>
+            
+            <p>In accordance with the Czech Act No. 101/2000 Coll. on Personal Data Protection, as amended, and EU Regulation 2016/679 (General Data Protection Regulation) from April 27, 2016, which will apply from 25 May 2018, we would like to inform you about how we use and protect your personal data.</p>
+            
+            <h2>What is Personal Information</h2>
+            <p>Personal Information refers to any information that you voluntarily submit to us and that identifies you personally, such as your name, company name, e-mail address and other information that can identify you as a person.</p>
+            
+            <h2>The Services We Provide</h2>
+            <p>We provide services in the area of learning, leadership development and executive search.</p>
+            
+            <p>The provider of these services is learn2grow s.r.o. with its legal office address Osnice 181, 252 42 Jesenice, Czech Republic and branch office in City Empiria, Na Strži 1702/65, 140 00 Praha 4, Czech Republic, company ID: 26733765, entered in the Register of Companies of the Municipal Court in Prague under Section C, entry 90343.</p>
+            
+            <h2>How we use the information we collect</h2>
+            <p>In the area of learning and development, which includes our learning and 360-degree feedback portals, we mostly work with basic identification and contact information that is provided to us by our clients, such as:</p>
+            
+            <ul>
+                <li>your name,</li>
+                <li>your company (employer) name,</li>
+                <li>e-mail address,</li>
+            </ul>
+            
+            <p>which we use to maintain the necessary user history to make sure you can use both the learning portal and the 360-degree feedback portal effectively.</p>
+            
+            <p>In the area of executive search we work with information which you send to us in your CV or motivational letter as part of the selection process for positions in which you express interest in. We do not request any specific information or sending the CV in a specific template so there is a variety of information we receive from different candidates. Most of the time, this includes your name, phone number, e-mail address, your educational degree and/or other qualifications, your professional experience and employment history. Occasionally, the CV can contain information such as your date of birth, your photo, country of citizenship.</p>
+            
+            <p>We never request from you any personal information that is not necessary for the purpose of the candidate selection process, such as copies of ID documents, ID number or birth certificate.</p>
+            
+            <h2>Why and for How Long Do We Keep Data?</h2>
+            <p>The data we keep is always for the purpose of providing professional and quality services to our clients. For learning and leadership development services, this means using the data provided by the client for the duration of the project or as required by law. For executive search services, this means keeping data on candidates during the selection process, and, if you give us your consent, for another 1 or 2 years.</p>
+            
+            <h2>Cookies</h2>
+            <p>Our websites use cookies, which are used to collect information associated with the use of the websites, such as which web pages you visited. We use Google Analytics, a tool from Google that allows us to analyse web activity to make improvements to the websites. You can find more on Google Analytics and the Google privacy policy on <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=en</a>.</p>
+            
+            <h2>How We Keep and Protect Your Personal Data</h2>
+            <p>When we handle personal data, we do it through IT tools and occasionally manually while taking security very seriously. We have internal policies and control in place to ensure that your data is not lost, misused, disclosed or accessed by unauthorized persons.</p>
+            
+            <h2>Your rights</h2>
+            <p>As a data subject, you can obtain a copy of your data on request, require that we correct the data or require that we delete or stop processing your data.</p>
+            
+            <p>We delete your data where it is no longer necessary for the purposes of processing. We delete the data we maintain with your consent when your consent expires or earlier if you withdraw your consent at any point.</p>
+            
+            <p>This Policy becomes effective on May 25th, 2018 and is part of our Business Terms and Conditions. learn2grow s.r.o. is entitled to change this Policy and the new version of the privacy policy will be published on its website.</p>
+            
+            <h2>Contact information</h2>
+            <p>In case of any questions regarding keeping and processing your personal data please contact us at <a href="mailto:info@learn2grow.cz">info@learn2grow.cz</a>, tel. +420 241 404 170 or in writing at the address of our branch office in Prague, City Empiria, Na Strži 1702/65, 140 00 Praha 4.</p>
+        </div>
+
+        <div id="content-cs" style="display: none;">
+            <h1>Informace o zpracování osobních údajů</h1>
+            
+            <p>Ochrana Vašich osobních údajů pro nás vždy byla jednou z priorit. Při zpracování osobních údajů ctíme a respektujeme standardy ochrany osobních údajů a dodržujeme zásady jasného účelu, transparentnosti a uchovávání po dobu nezbytně nutnou pro daný účel.</p>
+            
+            <p>V souladu se zákonem č. 101/2000 Sb. o ochraně osobních údajů a ve znění pozdějších předpisů a Nařízením EU 2016/679 (obecné nařízení o ochraně osobních údajů) ze dne 27. dubna 2016, které nabývá účinnosti dne 25. května 2018, bychom Vás rádi informovali o tom, jak Vaše osobní údaje používáme a chráníme.</p>
+            
+            <h2>Co jsou osobní údaje</h2>
+            <p>Nařízení GDPR popisuje osobní údaje jako informace o identifikované nebo identifikovatelné fyzické osobě. Jde tedy o jména, kontakty, telefon a řadu dalších informací, které mohou samostatně nebo v kombinaci identifikovat jednotlivce.</p>
+            
+            <h2>Jaké služby poskytujeme</h2>
+            <p>Služby, které poskytujeme našim klientům, jsou jak v oblasti vzdělávání a rozvoje, tak v oblasti výběru do pozic manažerů a specialistů. Klientům v rámci poskytování služeb v oblasti rozvoje a vzdělávání dále poskytujeme nástroj 360-ti stupňové zpětné vazby, který umožňuje manažerům získání zpětné vazby od okruhu lidí, se kterými spolupracují.</p>
+            
+            <p>Poskytovatelem těchto služeb je společnost learn2grow s.r.o., se sídlem Osnice 181, 252 42 Jesenice, IČO: 26733765, zapsaná v obchodním rejstříku vedeném u Městského soudu v Praze, oddíl C, vložka 90343 s provozovnou City Empiria, Na Strži 1702/65, 140 00 Praha 4.</p>
+            
+            <h2>Jaké osobní údaje zpracováváme</h2>
+            <p>V oblasti vzdělávání pracujeme se základními identifikačními a kontaktními údaji (jméno, příjmení, e-mail, případně telefon) pro zajištění fungující služby našeho vzdělávacího portálu. Důvodem je zajištění uživatelské historie v rámci studia e-learningových kurzů.</p>
+            
+            <p>V oblasti poskytování nástroje 360 stupňové zpětné vazby pracujeme se základními kontaktními údaji, jako je jméno a e-mail uživatele, případně s dalšími údaji, které nám Klient coby Správce těchto údajů poskytne.</p>
+            
+            <p>V oblasti výběru do pozic manažerů a specialistů pak pracujeme s údaji, které nám zašlete ve svém životopise nebo motivačním dopise jako podklady pro výběr do pozic, o které máte zájem. Po uchazečích nevyžadujeme konkrétní údaje či šablonu životopisu, proto se údaje uchazečů o zaměstnání mohou lišit, zpravidla však jde o:</p>
+            
+            <ul>
+                <li>Jméno a příjmení</li>
+                <li>Telefonní číslo</li>
+                <li>E-mail</li>
+                <li>Dosažené vzdělání, případně jiné kvalifikace</li>
+                <li>Přehled praxe a pracovní historii</li>
+            </ul>
+            
+            <p>Může jít i o další námi nevyžádané údaje, jako je datum narození, fotografie, občanství.</p>
+            
+            <p>Nikdy nevyžadujeme osobní údaje, které k danému účelu nejsou potřebné, jako je např. rodné číslo, číslo občanského průkazu, kopie dokladu apod.</p>
+            
+            <h2>Účel zpracování poskytnutých osobních údajů</h2>
+            <p>Údaje, které uchováváme po nezbytně nutnou dobu na našem vzdělávacím portále (jméno, příjmení, e-mailová adresa a uživatelská historie v rámci studia online kurzů a poskytování zpětné vazby) uchováváme za účelem efektivního studia e-learningu a za účelem poskytnutí 360 stupňové zpětné vazby.</p>
+            
+            <p>Údaje o uchazečích o zaměstnání uchováváme v rámci výběrového řízení pro naše klienty po nezbytně nutnou dobu.</p>
+            
+            <h2>Cookies</h2>
+            <p>Naše webové stránky používají cookies za účelem informace o návštěvnosti těchto stránek. Získáváme je pomocí služeb Google Analytics. Google Analytics od firmy Google je nástroj na zjišťování počtu návštěv na stránkách, odkud tyto návštěvy přišly a jaké stránky si prohlížely. Zásady ochrany soukromí společnosti Google najdete na stránce <a href="https://policies.google.com/privacy?hl=cs" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=cs</a>.</p>
+            
+            <h2>Jak Vaše údaje zpracováváme a chráníme</h2>
+            <p>Ke zpracování dochází prostřednictvím výpočetní techniky, popř. i manuálním způsobem u osobních údajů v listinné podobě za dodržení všech bezpečnostních zásad pro správu a zpracování osobních údajů. Přijímáme veškerá technická i organizační opatření k zabezpečení ochrany osobních údajů tak, abychom vyloučili možnost neoprávněného nebo nahodilého přístupu k osobním údajům.</p>
+            
+            <h2>Právo na přístup a výmaz</h2>
+            <p>Údaje, které již nejsou pro daný účel nezbytně nutné, nejsou uchovávány nebo jsou vymazány. Údaje, které zpracováváme s Vaším souhlasem a pro které jsme správcem, jsou vymazány se skončením souhlasu nebo v případě, že svůj souhlas odvoláte dříve.</p>
+            
+            <p>Vaším právem je požádat o přístup ke svým osobním údajům, jejich opravu nebo výmaz.</p>
+            
+            <h2>Kontaktní údaje</h2>
+            <p>V případě dotazů se ohledně zpracování osobních údajů nás neváhejte kontaktovat e-mailem na <a href="mailto:info@learn2grow.cz">info@learn2grow.cz</a>, tel. +420 241 404 170 nebo písemně na adresu naší provozovny, City Empiria, Na Strži 1702/65, 140 00 Praha 4.</p>
+            
+            <p>Tyto podmínky nabývají účinnosti dnem 25. 5. 2018 a jsou součástí obchodních podmínek. Správce je oprávněn tyto podmínky změnit. Novou verzi podmínek ochrany osobních údajů zveřejní na svých internetových stránkách.</p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <footer id="contact" style="background: #F8FAFC; color: var(--text); padding: 4rem 0 2rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem;">
+                <div>
+                    <img src="/images/Logo.jpeg" alt="learn2grow" style="height: 60px; margin-bottom: 2rem; border-radius: 8px;">
+                    <div style="color: var(--text); line-height: 1.8;">
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">learn2grow s. r. o.</strong></p>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">Prague, Czech Republic</p>
+                        <p style="margin-bottom: 0.5rem; color: var(--text-light);">(+420) 773 923 402</p>
+                        <p style="color: var(--text-light);">info@learn2grow.cz</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerServices">Services</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="/#headhunting" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-light)'" data-i18n="headhuntingTitle">Headhunting</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="/#hr-consulting" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-light)'" data-i18n="hrTitle">HR Consulting</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerCompany">Company</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="/#about" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-light)'" data-i18n="footerAbout">About Us</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="/#team" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-light)'" data-i18n="footerTeam">Team</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="/#insights" style="color: var(--text-light); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-light)'" data-i18n="footerInsights">Insights</a></li>
+                        <li style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);"><p style="color: var(--text-light); font-size: 0.9rem; line-height: 1.6; margin: 0;"><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" style="color: var(--orange); text-decoration: underline; transition: color 0.3s ease;" onmouseover="this.style.color='#ea580c'" onmouseout="this.style.color='var(--orange)'" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; border-top: 1px solid var(--border);">
+                <p style="color: var(--text-light); font-size: 0.9rem;" data-i18n="copyright">Copyright © 2002–2026 learn2grow</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://www.linkedin.com/company/learn2grow" target="_blank" rel="noopener noreferrer" aria-label="Visit learn2grow on LinkedIn" style="width: 44px; height: 44px; background: white; border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;" onmouseover="this.style.background='var(--orange)'; this.style.borderColor='var(--orange)'; this.style.color='white'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='white'; this.style.borderColor='var(--border)'; this.style.color='var(--primary)'; this.style.transform='translateY(0)'">in</a>
+                    <a href="mailto:info@learn2grow.cz" aria-label="Send email to learn2grow" style="width: 44px; height: 44px; background: white; border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); text-decoration: none; font-size: 1.3rem; transition: all 0.3s ease;" onmouseover="this.style.background='var(--orange)'; this.style.borderColor='var(--orange)'; this.style.color='white'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='white'; this.style.borderColor='var(--border)'; this.style.color='var(--primary)'; this.style.transform='translateY(0)'">✉</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language toggle functionality
+        const langBtns = document.querySelectorAll('.lang-btn');
+        let currentLang = localStorage.getItem('language') || 'en';
+        
+        const translations = {
+            en: {
+                navHeadhunting: 'HEADHUNTING',
+                navHRConsulting: 'HR CONSULTING',
+                navAboutUs: 'ABOUT US',
+                navInsights: 'INSIGHTS',
+                navContact: 'CONTACT',
+                footerServices: 'Services',
+                footerCompany: 'Company',
+                footerAbout: 'About Us',
+                footerTeam: 'Team',
+                footerInsights: 'Insights',
+                headhuntingTitle: 'Headhunting',
+                hrTitle: 'HR Consulting',
+                copyright: 'Copyright © 2002–2026 learn2grow',
+                privacyText: 'We respect high standards of privacy protection. Read more about our',
+                privacyLink: 'Privacy Policy and Cookie Statement'
+            },
+            cs: {
+                navHeadhunting: 'HEADHUNTING',
+                navHRConsulting: 'HR PORADENSTVÍ',
+                navAboutUs: 'O NÁS',
+                navInsights: 'NOVINKY',
+                navContact: 'KONTAKT',
+                footerServices: 'Služby',
+                footerCompany: 'Společnost',
+                footerAbout: 'O nás',
+                footerTeam: 'Tým',
+                footerInsights: 'Novinky',
+                headhuntingTitle: 'Headhunting',
+                hrTitle: 'HR Poradenství',
+                copyright: 'Copyright © 2002–2026 learn2grow',
+                privacyText: 'Respektujeme vysoké standardy ochrany soukromí. Přečtěte si více o naší',
+                privacyLink: 'Politice ochrany osobních údajů a cookies'
+            }
+        };
+
+        function updateLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update button states
+            langBtns.forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Update content visibility
+            document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+            document.getElementById('content-cs').style.display = lang === 'cs' ? 'block' : 'none';
+
+            // Update translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                updateLanguage(btn.dataset.lang);
+            });
+        });
+
+        // Initialize language on page load
+        updateLanguage(currentLang);
+
+        // Navigation shadow on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
