@@ -1,29 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
 import '../styles/globals.css';
+
+const schema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'learn2grow',
+    url: 'https://learn2grow.cz',
+    description: 'Executive Search & Strategic Consulting',
+    contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'info@learn2grow.cz',
+        telephone: '+420773923402',
+    },
+});
 ---
 
-<Layout title="learn2grow | Executive Search & Strategic Consulting">
+<Layout title="learn2grow | Executive Search & Strategic Consulting" schema={schema}>
 
-<!-- Navigation -->
-<nav id="navbar">
-    <div class="nav-container">
-        <a href="#" class="logo" id="logo-link">
-            <img src="/images/Logo.jpeg" alt="learn2grow" />
-        </a>
-        <ul class="nav-links">
-            <li><a href="#headhunting" data-i18n="navHeadhunting">HEADHUNTING</a></li>
-            <li><a href="#hr-consulting" data-i18n="navHRConsulting">HR CONSULTING</a></li>
-            <li><a href="#about" data-i18n="navAboutUs">ABOUT US</a></li>
-            <li><a href="#insights" data-i18n="navInsights">INSIGHTS</a></li>
-            <li><a href="#contact" data-i18n="navContact">CONTACT</a></li>
-        </ul>
-        <div class="language-toggle">
-            <button class="lang-btn" data-lang="cs">CZ</button>
-            <button class="lang-btn active" data-lang="en">EN</button>
-        </div>
-    </div>
-</nav>
+<Nav />
 
 <!-- Hero Section -->
 <section class="hero">
@@ -50,7 +46,7 @@ import '../styles/globals.css';
 <section id="headhunting" class="section-white">
     <div class="section-inner">
         <div class="section-header">
-            <h1 class="section-title-large" data-i18n="headhuntingTitle">Headhunting</h1>
+            <h2 class="section-title-large" data-i18n="headhuntingTitle">Headhunting</h2>
             <div class="orange-bar"></div>
             <p class="section-lead" data-i18n="executiveSearchText">Executive search starts with a deep understanding of your business, its context, and its leadership needs. We bring in-depth insight into your situation and identify candidates who deliver real, lasting value to your organization. Our work combines direct search with disciplined assessment and a deep understanding of organizational context. All of our consultants bring first-hand corporate leadership experience, enabling sharper judgment and better hiring decisions.</p>
         </div>
@@ -73,7 +69,7 @@ import '../styles/globals.css';
 <section id="hr-consulting" class="section-surface section-with-glow">
     <div class="section-inner">
         <div class="section-header">
-            <h1 class="section-title-large" data-i18n="hrTitle">HR Consulting</h1>
+            <h2 class="section-title-large" data-i18n="hrTitle">HR Consulting</h2>
             <div class="orange-bar"></div>
             <p class="section-lead" data-i18n="hrText">Our passion is to work with companies and their leaders to grow their human capital. We help companies implement solid HR processes such as performance management, competency models, assessment centers, people development, 360 degree feedback, assessing and optimizing sales force.</p>
         </div>
@@ -258,7 +254,7 @@ import '../styles/globals.css';
                     <p class="article-date">December 12, 2025</p>
                     <h3 class="article-title" data-i18n="article2Title">Preparing Leaders for the Era of Physical AI</h3>
                     <p class="article-excerpt" data-i18n="article2Excerpt">Lucie Melicharová at Exponential Circles discussing what the Physical AI revolution means for business and human resources.</p>
-                    <a href="#" class="read-more-link" data-i18n="readMore">
+                    <a href="/exponential-circles" class="read-more-link" data-i18n="readMore">
                         Read more
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                     </a>
@@ -272,7 +268,7 @@ import '../styles/globals.css';
                     <p class="article-date">January 13, 2025</p>
                     <h3 class="article-title" data-i18n="article3Title">ESG in Practice: Supporting Clients on Their Sustainability Journey</h3>
                     <p class="article-excerpt" data-i18n="article3Excerpt">Real change within an organization starts with people and their understanding of new challenges.</p>
-                    <a href="#" class="read-more-link" data-i18n="readMore">
+                    <a href="/esg-in-practice" class="read-more-link" data-i18n="readMore">
                         Read more
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
                     </a>
@@ -299,7 +295,7 @@ import '../styles/globals.css';
 <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-content">
         <div class="cookie-text">
-            <p><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p>
+            <p data-i18n="cookieText">This site uses cookies to save your language preference.</p>
         </div>
         <div class="cookie-buttons">
             <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
@@ -334,9 +330,6 @@ import '../styles/globals.css';
                     <li><a href="#about" data-i18n="footerAbout">About Us</a></li>
                     <li><a href="#team" data-i18n="footerTeam">Team</a></li>
                     <li><a href="#insights" data-i18n="footerInsights">Insights</a></li>
-                    <li class="footer-privacy">
-                        <p><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -353,98 +346,6 @@ import '../styles/globals.css';
 </Layout>
 
 <style is:global>
-/* ─── Navigation ─────────────────────────────────────────── */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    z-index: 1000;
-    padding: 1rem 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-nav.scrolled {
-    padding: 0.75rem 0;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-}
-.nav-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: grid;
-    grid-template-columns: 200px 1fr 200px;
-    align-items: center;
-    gap: 2rem;
-}
-.nav-container .logo { justify-self: start; }
-.nav-container .nav-links { justify-self: center; }
-.nav-container .language-toggle { justify-self: end; }
-
-.logo {
-    display: block;
-    height: 48px;
-    transition: height 0.3s ease;
-}
-nav.scrolled .logo { height: 36px; }
-.logo img {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-}
-.nav-links {
-    display: flex;
-    gap: 2.25rem;
-    list-style: none;
-    justify-content: center;
-}
-.nav-links a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    padding-bottom: 4px;
-}
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 3px;
-    background: linear-gradient(90deg, var(--orange), #EA580C);
-    border-radius: 2px;
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.nav-links a:hover::after,
-.nav-links a.active::after { width: 100%; }
-.nav-links a:hover,
-.nav-links a.active { color: var(--primary); }
-.nav-links a.active { font-weight: 600; }
-
-.language-toggle {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
-.lang-btn {
-    padding: 0.5rem 1rem;
-    background: transparent;
-    border: 1px solid var(--text-light);
-    border-radius: 6px;
-    color: var(--text);
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'DM Sans', sans-serif;
-}
-.lang-btn:hover { border-color: var(--primary); color: var(--primary); }
-.lang-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-
 /* ─── Hero ───────────────────────────────────────────────── */
 .hero {
     margin-top: 70px;
@@ -1110,9 +1011,6 @@ footer {
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
 @media (max-width: 768px) {
-    .nav-container { grid-template-columns: 1fr auto; }
-    .nav-links { display: none; }
-    .nav-container .nav-links { display: none; }
     .hero-slide-subheader { font-size: 2rem; }
     .hero-slide-text { font-size: 1.1rem; }
     .section-title-large { font-size: 2rem; }
@@ -1185,8 +1083,7 @@ const translations: Record<string, Record<string, string>> = {
         footerTeam: 'Team',
         footerInsights: 'Insights',
         copyright: 'Copyright © 2002–2026 learn2grow',
-        privacyText: 'We respect high standards of privacy protection. Read more about our',
-        privacyLink: 'Privacy Policy and Cookie Statement',
+        cookieText: 'This site uses cookies to save your language preference.',
     },
     cs: {
         navHeadhunting: 'HEADHUNTING',
@@ -1204,9 +1101,9 @@ const translations: Record<string, Record<string, string>> = {
         stat1Label: 'Klientů, pro které jsme našli a umístili nové členy týmu',
         stat2Label: 'E-learningových kurzů na míru',
         testimonialTitle: 'Co říkají naši klienti',
-        testimonial1: '"Spolupráce s learn2grow transformovala náš proces výběru vedoucích pracovníků. Našli kandidáty, které bychom sami neobjevili."',
-        testimonial2: '"Jejich strategický přístup k HR poradenství nám pomohl vybudovat silnější organizační kulturu a výrazně zlepšil udržení talentů."',
-        testimonial3: '"Programy učení a rozvoje jsou dokonale přizpůsobeny našim potřebám. Náš tým výrazně vyrostl."',
+        testimonial1: '"Využíváme inovativní řešení z portfolia learn2grow k rozvoji a růstu našich zaměstnanců a našeho podnikání."',
+        testimonial2: '"learn2grow je dlouhodobý a vysoce kvalitní partner při obsazování důležitých pozic v naší společnosti."',
+        testimonial3: '"E-learningové moduly dodávané learn2grow jsou snadno použitelné, interaktivní, dobře strukturované a pokrývají všechna důležitá témata a oblasti."',
         headhuntingTitle: 'Headhunting',
         executiveSearchText: 'Executive search začíná hlubokým porozuměním vašemu podnikání, jeho kontextu a potřebám vedení. Přinášíme hloubkový vhled do vaší situace a identifikujeme kandidáty, kteří přinesou skutečnou a trvalou hodnotu vaší organizaci.',
         qualityTitle: 'Zaměření na kvalitu a dlouhodobý dopad',
@@ -1244,14 +1141,14 @@ const translations: Record<string, Record<string, string>> = {
         footerTeam: 'Tým',
         footerInsights: 'Novinky',
         copyright: 'Copyright © 2002–2026 learn2grow',
-        privacyText: 'Respektujeme vysoké standardy ochrany soukromí. Přečtěte si více o naší',
-        privacyLink: 'Politice ochrany osobních údajů a cookies',
+        cookieText: 'Tato stránka používá cookies k uložení vašeho jazykového nastavení.',
     }
 };
 
 function setLanguage(lang: string): void {
     currentLang = lang;
     localStorage.setItem('language', lang);
+    document.documentElement.lang = lang === 'cs' ? 'cs' : 'en';
     langBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
     const t = translations[lang];
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1263,34 +1160,18 @@ function setLanguage(lang: string): void {
 langBtns.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang!)));
 setLanguage(currentLang);
 
-// Cookie consent
-function loadAnalytics(): void {
-    // Replace G-XXXXXXXXXX with your actual GA ID when ready
-    const id = 'G-XXXXXXXXXX';
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
-    document.head.appendChild(s);
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    function gtag(...args: any[]): void { (window as any).dataLayer.push(args); }
-    gtag('js', new Date());
-    gtag('config', id);
-}
-
+// Cookie consent banner
 const cookieBanner = document.getElementById('cookieBanner')!;
 const cookieAccept = document.getElementById('cookieAccept')!;
 const cookieDecline = document.getElementById('cookieDecline')!;
 const consent = localStorage.getItem('cookieConsent');
 
-if (consent === 'accepted') {
-    loadAnalytics();
-} else if (!consent) {
+if (!consent) {
     setTimeout(() => cookieBanner.classList.add('show'), 1000);
 }
 cookieAccept.addEventListener('click', () => {
     localStorage.setItem('cookieConsent', 'accepted');
     cookieBanner.classList.remove('show');
-    loadAnalytics();
 });
 cookieDecline.addEventListener('click', () => {
     localStorage.setItem('cookieConsent', 'declined');
@@ -1299,8 +1180,7 @@ cookieDecline.addEventListener('click', () => {
 
 // Navbar scroll + active section highlight
 function updateActiveNav(): void {
-    const path = window.location.pathname;
-    const anchors = document.querySelectorAll<HTMLAnchorElement>('.nav-links a[href^="#"]');
+    const anchors = document.querySelectorAll<HTMLAnchorElement>('.nav-links a[href^="#"], .nav-links a[href^="/#"]');
     const sections = document.querySelectorAll<HTMLElement>('section[id], footer[id]');
     let active = '';
     const scrollPos = window.scrollY + 150;
@@ -1313,8 +1193,9 @@ function updateActiveNav(): void {
         });
     }
     anchors.forEach(a => {
+        const href = a.getAttribute('href')!;
         a.classList.remove('active');
-        if (a.getAttribute('href') === `#${active}`) a.classList.add('active');
+        if (href === `#${active}` || href === `/#${active}`) a.classList.add('active');
     });
 }
 
@@ -1327,16 +1208,12 @@ window.addEventListener('scroll', () => {
     btn.classList.toggle('visible', window.scrollY > 500);
 });
 
-// Logo click → scroll to top
-document.getElementById('logo-link')!.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Smooth scroll for all anchor links
-document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach(a => {
+// Smooth scroll for anchor links (handles both #section and /#section)
+document.querySelectorAll<HTMLAnchorElement>('a[href^="#"], a[href^="/#"]').forEach(a => {
     a.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href')!);
+        const href = this.getAttribute('href')!;
+        const hash = href.startsWith('/#') ? href.slice(1) : href;
+        const target = document.querySelector(hash);
         if (target) {
             e.preventDefault();
             const offset = document.getElementById('navbar')!.offsetHeight + 20;

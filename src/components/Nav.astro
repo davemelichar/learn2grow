@@ -1,0 +1,87 @@
+---
+// Shared navigation component used on all pages.
+// On the homepage, smooth-scroll JS in index.astro handles /#section links.
+// On subpages, clicking links navigates to the homepage at that section.
+---
+
+<nav id="navbar">
+    <div class="nav-container">
+        <a href="/" class="logo">
+            <img src="/images/Logo.jpeg" alt="learn2grow" />
+        </a>
+        <ul class="nav-links">
+            <li><a href="/#headhunting" data-i18n="navHeadhunting">HEADHUNTING</a></li>
+            <li><a href="/#hr-consulting" data-i18n="navHRConsulting">HR CONSULTING</a></li>
+            <li><a href="/#about" data-i18n="navAboutUs">ABOUT US</a></li>
+            <li><a href="/insights" data-i18n="navInsights">INSIGHTS</a></li>
+            <li><a href="/#contact" data-i18n="navContact">CONTACT</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="language-toggle">
+                <button class="lang-btn" data-lang="cs">CZ</button>
+                <button class="lang-btn active" data-lang="en">EN</button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="hamburger open" id="mobile-close" aria-label="Close navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul>
+        <li><a href="/#headhunting" data-i18n="navHeadhunting" class="mobile-link">HEADHUNTING</a></li>
+        <li><a href="/#hr-consulting" data-i18n="navHRConsulting" class="mobile-link">HR CONSULTING</a></li>
+        <li><a href="/#about" data-i18n="navAboutUs" class="mobile-link">ABOUT US</a></li>
+        <li><a href="/insights" data-i18n="navInsights" class="mobile-link">INSIGHTS</a></li>
+        <li><a href="/#contact" data-i18n="navContact" class="mobile-link">CONTACT</a></li>
+    </ul>
+    <div class="mobile-lang language-toggle">
+        <button class="lang-btn" data-lang="cs">CZ</button>
+        <button class="lang-btn active" data-lang="en">EN</button>
+    </div>
+</div>
+
+<script>
+const hamburger = document.getElementById('hamburger')!;
+const mobileClose = document.getElementById('mobile-close')!;
+const mobileNav = document.getElementById('mobile-nav')!;
+
+function openMenu(): void {
+    mobileNav.classList.add('open');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMenu(): void {
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+    if (mobileNav.classList.contains('open')) closeMenu();
+    else openMenu();
+});
+mobileClose.addEventListener('click', closeMenu);
+
+// Close when a mobile link is clicked
+mobileNav.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+// Close on Escape
+document.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Escape') closeMenu();
+});
+</script>

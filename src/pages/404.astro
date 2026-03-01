@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import '../styles/globals.css';
+---
+
+<Layout
+    title="Page Not Found — learn2grow"
+    description="The page you are looking for could not be found."
+>
+
+<Nav />
+
+<main class="error-page">
+    <div class="error-inner">
+        <div class="error-number">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-text">The page you are looking for doesn't exist or has been moved.</p>
+        <div class="error-actions">
+            <a href="/" class="cta-button">Back to Home</a>
+            <a href="/insights" class="cta-button-outline">Browse Insights</a>
+        </div>
+    </div>
+</main>
+
+</Layout>
+
+<style is:global>
+.error-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+    background: white;
+}
+.error-inner {
+    text-align: center;
+    max-width: 560px;
+}
+.error-number {
+    font-family: 'DM Sans Variable', 'DM Sans', sans-serif;
+    font-size: 9rem;
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    opacity: 0.15;
+}
+.error-title {
+    font-family: 'DM Sans Variable', 'DM Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1.25rem;
+}
+.error-text {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+.error-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--primary);
+}
+.cta-button:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249,115,22,0.3);
+}
+.cta-button-outline {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--primary);
+}
+.cta-button-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+</style>
+
+<script>
+// Apply saved language
+const langBtns = document.querySelectorAll('.lang-btn') as NodeListOf<HTMLButtonElement>;
+const lang = localStorage.getItem('language') || 'en';
+document.documentElement.lang = lang === 'cs' ? 'cs' : 'en';
+langBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+
+// Navbar scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
