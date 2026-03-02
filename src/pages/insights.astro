@@ -8,7 +8,7 @@ import '../styles/globals.css';
 const articles = await getCollection('articles');
 articles.sort((a, b) => a.data.order - b.data.order);
 
-const articlesData = articles.map(a => ({
+const articlesData = articles.map((a) => ({
     id: a.id,
     image: a.data.image,
     category: a.data.category,
@@ -17,7 +17,7 @@ const articlesData = articles.map(a => ({
     title_en: a.data.title_en,
     title_cs: a.data.title_cs,
     excerpt_en: a.data.excerpt_en,
-    excerpt_cs: a.data.excerpt_cs,
+    excerpt_cs: a.data.excerpt_cs
 }));
 ---
 
@@ -33,26 +33,36 @@ const articlesData = articles.map(a => ({
 
     <main class="container">
         <div class="articles-grid">
-            {articles.map(a => (
-                <article class="article-card">
-                    <div class="article-image" style={`background-image: url('${a.data.image}');`}>
-                        <div class="article-category">
-                            <span class="category-badge" data-i18n={`${a.id}_category`}>{a.data.category}</span>
+            {
+                articles.map((a) => (
+                    <article class="article-card">
+                        <div class="article-image" style={`background-image: url('${a.data.image}');`}>
+                            <div class="article-category">
+                                <span class="category-badge" data-i18n={`${a.id}_category`}>
+                                    {a.data.category}
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="article-body">
-                        <p class="article-date" data-i18n={`${a.id}_date`}>{a.data.date_en}</p>
-                        <h2 class="article-title" data-i18n={`${a.id}_title`}>{a.data.title_en}</h2>
-                        <p class="article-excerpt" data-i18n={`${a.id}_excerpt`}>{a.data.excerpt_en}</p>
-                        <a href={`/${a.id}`} class="read-more-link" data-i18n="readMore">
-                            Read more
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                ><path d="M5 12h14M12 5l7 7-7 7"></path></svg
-                            >
-                        </a>
-                    </div>
-                </article>
-            ))}
+                        <div class="article-body">
+                            <p class="article-date" data-i18n={`${a.id}_date`}>
+                                {a.data.date_en}
+                            </p>
+                            <h2 class="article-title" data-i18n={`${a.id}_title`}>
+                                {a.data.title_en}
+                            </h2>
+                            <p class="article-excerpt" data-i18n={`${a.id}_excerpt`}>
+                                {a.data.excerpt_en}
+                            </p>
+                            <a href={`/${a.id}`} class="read-more-link" data-i18n="readMore">
+                                Read more
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                ))
+            }
         </div>
     </main>
 
@@ -109,8 +119,12 @@ const articlesData = articles.map(a => ({
         line-height: 1.4;
     }
     @media (max-width: 768px) {
-        .hero h1 { font-size: 2.5rem; }
-        .articles-grid { grid-template-columns: 1fr; }
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+        .articles-grid {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 
@@ -125,10 +139,14 @@ const articlesData = articles.map(a => ({
     let currentLang: string = localStorage.getItem('language') || 'en';
 
     type ArticleData = {
-        id: string; category: string;
-        date_en: string; date_cs: string;
-        title_en: string; title_cs: string;
-        excerpt_en: string; excerpt_cs: string;
+        id: string;
+        category: string;
+        date_en: string;
+        date_cs: string;
+        title_en: string;
+        title_cs: string;
+        excerpt_en: string;
+        excerpt_cs: string;
     };
     const articlesData: ArticleData[] = (window as any).__articlesData || [];
 
@@ -136,10 +154,10 @@ const articlesData = articles.map(a => ({
     for (const a of articlesData) {
         articleTranslations.en[`${a.id}_category`] = a.category === 'Articles' ? 'Articles' : 'News';
         articleTranslations.cs[`${a.id}_category`] = a.category === 'Articles' ? 'Články' : 'Aktuality';
-        articleTranslations.en[`${a.id}_date`]    = a.date_en;
-        articleTranslations.cs[`${a.id}_date`]    = a.date_cs;
-        articleTranslations.en[`${a.id}_title`]   = a.title_en;
-        articleTranslations.cs[`${a.id}_title`]   = a.title_cs;
+        articleTranslations.en[`${a.id}_date`] = a.date_en;
+        articleTranslations.cs[`${a.id}_date`] = a.date_cs;
+        articleTranslations.en[`${a.id}_title`] = a.title_en;
+        articleTranslations.cs[`${a.id}_title`] = a.title_cs;
         articleTranslations.en[`${a.id}_excerpt`] = a.excerpt_en;
         articleTranslations.cs[`${a.id}_excerpt`] = a.excerpt_cs;
     }
@@ -150,15 +168,15 @@ const articlesData = articles.map(a => ({
             ...articleTranslations.en,
             insightsTitle: 'Insights',
             insightsDescription:
-                'Explore our latest articles, research, and thought leadership on executive search, HR consulting, and organizational development.',
+                'Explore our latest articles, research, and thought leadership on executive search, HR consulting, and organizational development.'
         },
         cs: {
             ...sharedTranslations.cs,
             ...articleTranslations.cs,
             insightsTitle: 'Novinky',
             insightsDescription:
-                'Prozkoumejte naše nejnovější články, výzkum a myšlenkové vedení v oblasti executive search, HR poradenství a organizačního rozvoje.',
-        },
+                'Prozkoumejte naše nejnovější články, výzkum a myšlenkové vedení v oblasti executive search, HR poradenství a organizačního rozvoje.'
+        }
     };
 
     function setLanguage(lang: string): void {
