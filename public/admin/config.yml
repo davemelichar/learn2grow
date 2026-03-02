@@ -1,0 +1,50 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: articles
+    label: Insights Articles
+    folder: src/content/articles
+    create: true
+    delete: true
+    format: json
+    extension: json
+    identifier_field: title_en
+    slug: "{{fields.title_en}}"
+    fields:
+      - label: "Order (1 = newest)"
+        name: order
+        widget: number
+        value_type: int
+        hint: "Controls the display order — lower number appears first."
+      - label: Cover Image
+        name: image
+        widget: image
+      - label: Category
+        name: category
+        widget: select
+        options: ["Articles", "News"]
+      - label: "Date (English)"
+        name: date_en
+        widget: string
+        hint: 'e.g. January 26, 2026'
+      - label: "Date (Czech)"
+        name: date_cs
+        widget: string
+        hint: 'e.g. 26. ledna 2026'
+      - label: "Title (English)"
+        name: title_en
+        widget: string
+      - label: "Title (Czech)"
+        name: title_cs
+        widget: string
+      - label: "Excerpt (English)"
+        name: excerpt_en
+        widget: text
+      - label: "Excerpt (Czech)"
+        name: excerpt_cs
+        widget: text

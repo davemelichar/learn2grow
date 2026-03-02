@@ -58,8 +58,23 @@ const ogImageURL = new URL(ogImage, Astro.site).toString();
 
         <!-- Schema.org JSON-LD -->
         {schema && <Fragment set:html={`<script type="application/ld+json">${schema}</script>`} />}
+
+        <!-- Netlify Identity — redirects users back to /admin after login -->
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     </head>
     <body>
         <slot />
+        <script>
+            // @ts-nocheck
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on('init', user => {
+                    if (!user) {
+                        window.netlifyIdentity.on('login', () => {
+                            document.location.href = '/admin/';
+                        });
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
