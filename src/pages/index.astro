@@ -1385,9 +1385,36 @@ const schema = JSON.stringify({
     .form-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
+    /* Hero */
+    .hero { min-height: 50vh; }
+    .hero-slider { min-height: auto; padding: 3.5rem 1.5rem; }
     .hero-slide-subheader { font-size: 2rem; }
-    .hero-slide-text { font-size: 1.1rem; }
+    .hero-slide-text { font-size: 1.1rem; margin-bottom: 1.5rem; }
+
+    /* Section padding */
+    .section-white { padding: 3.5rem 1.5rem; }
+    .section-surface { padding: 3.5rem 1.5rem; }
+    .section-insights { padding: 3.5rem 1rem; }
+    .section-contact { padding: 3.5rem 1.5rem; }
     .section-title-large { font-size: 2rem; }
+
+    /* why-feature stacked */
+    .why-feature-header { padding: 2rem 1.5rem; }
+    .why-feature-content { padding: 2rem 1.5rem; }
+
+    /* quality box stacked */
+    .quality-body { padding: 2rem 1.5rem; }
+
+    /* HR card stacked */
+    .card-dark-header { padding: 2rem 1.5rem; }
+    .card-body { padding: 1.5rem 1.5rem 2rem; }
+
+    /* Stats row — go horizontal */
+    .stats-row { flex-direction: row; border-left: none; border-top: 2px solid rgba(249,115,22,0.35); padding-top: 0.25rem; }
+    .stat-block { flex: 1; padding: 1.25rem 0.5rem 1.25rem 1rem; }
+    .stat-block::before { display: none; }
+    .stat-number { font-size: 2rem; }
+    .stat-plus { font-size: 1.6rem; bottom: 0.15rem; }
 }
 @media (max-width: 600px) {
     .hero-slider { padding: 2rem 1rem; }
