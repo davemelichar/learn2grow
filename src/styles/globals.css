@@ -314,7 +314,17 @@ nav.scrolled .logo { height: 36px; }
 }
 .read-more-link:hover { gap: 0.75rem; }
 @media (max-width: 768px) {
-    .articles-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .articles-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .article-image { height: 160px; }
+    .article-body { padding: 1.5rem; }
+}
+@media (max-width: 600px) {
+    .articles-grid { gap: 1.25rem; }
+    .article-image { height: 130px; }
+    .article-body { padding: 1.25rem; }
+    .article-title { font-size: 1.05rem; margin-bottom: 0.75rem; }
+    .article-date { margin-bottom: 0.5rem; }
+    .article-excerpt { font-size: 0.9rem; margin-bottom: 1rem; }
 }
 
 /* ─── Article Pages ────────────────────────────────────────── */
