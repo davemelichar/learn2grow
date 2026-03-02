@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/globals.css';
 ---
 
@@ -25,8 +26,8 @@ import '../styles/globals.css';
         <span data-i18n="backToInsights">Back to Insights</span>
     </a>
 
-    <div class="article-image">
-        <img src="/images/article9.jpg" alt="HR Lessons from Behavioral Economics" />
+    <div class="article-image-block">
+        <img loading="lazy" src="/images/article9.jpg" alt="HR Lessons from Behavioral Economics" />
     </div>
 
     <div class="article-intro">
@@ -43,7 +44,7 @@ import '../styles/globals.css';
             <rect width="800" height="500" fill="#F8FAFC"/>
 
             <!-- Title Banner -->
-            <rect width="800" height="64" fill="#0F172A"/>
+            <rect width="800" height="64" fill="#1C1917"/>
             <text x="28" y="27" fill="white" font-size="14" font-weight="700" font-family="'DM Sans',sans-serif" letter-spacing="0.06em">BEHAVIORAL ECONOMICS LESSONS</text>
             <text x="28" y="50" fill="#F97316" font-size="14" font-weight="700" font-family="'DM Sans',sans-serif" letter-spacing="0.06em">FOR HR PROFESSIONALS</text>
             <!-- Arrow in title -->
@@ -96,7 +97,7 @@ import '../styles/globals.css';
 
             <!-- ─── RIGHT: GOAL + ARROW ─────────────────── -->
             <!-- Mountain -->
-            <polygon points="583,85 656,190 510,190" fill="#0F172A" opacity="0.93"/>
+            <polygon points="583,85 656,190 510,190" fill="#1C1917" opacity="0.93"/>
             <polygon points="583,85 601,120 565,120" fill="white" opacity="0.1"/>
             <!-- Sun -->
             <circle cx="690" cy="105" r="20" fill="#FEF08A"/>
@@ -109,17 +110,17 @@ import '../styles/globals.css';
             <line x1="666" y1="83" x2="653" y2="72" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
             <line x1="658" y1="107" x2="642" y2="107" stroke="#F97316" stroke-width="2.5" stroke-linecap="round"/>
             <!-- Goal label -->
-            <text x="506" y="210" fill="#0F172A" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">AMAZING EMPLOYEE</text>
-            <text x="514" y="228" fill="#0F172A" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">EXPERIENCE</text>
+            <text x="506" y="210" fill="#1C1917" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">AMAZING EMPLOYEE</text>
+            <text x="514" y="228" fill="#1C1917" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">EXPERIENCE</text>
             <!-- Arrow head -->
-            <polygon points="544,234 580,206 616,234" fill="#0F172A"/>
+            <polygon points="544,234 580,206 616,234" fill="#1C1917"/>
             <!-- Arrow body -->
-            <rect x="560" y="234" width="40" height="222" fill="#0F172A" rx="3"/>
+            <rect x="560" y="234" width="40" height="222" fill="#1C1917" rx="3"/>
             <!-- Arrow label -->
             <text transform="translate(580,360) rotate(-90)" fill="white" font-size="10.5" font-weight="700" font-family="'DM Sans',sans-serif" text-anchor="middle" letter-spacing="0.4">RATIONAL DECISION MAKING</text>
             <!-- Design Thinking label -->
-            <text transform="translate(626,244) rotate(-35)" fill="#0F172A" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">DESIGN</text>
-            <text transform="translate(631,264) rotate(-35)" fill="#0F172A" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">THINKING</text>
+            <text transform="translate(626,244) rotate(-35)" fill="#1C1917" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">DESIGN</text>
+            <text transform="translate(631,264) rotate(-35)" fill="#1C1917" font-size="11" font-weight="700" font-family="'DM Sans',sans-serif">THINKING</text>
             <!-- Connector from river to arrow -->
             <line x1="370" y1="262" x2="552" y2="262" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5,4"/>
             <polygon points="549,258 559,262 549,266" fill="#94A3B8"/>
@@ -167,151 +168,46 @@ import '../styles/globals.css';
     <p class="article-source" data-i18n="source">Originally published in HR Forum, December 2015 · Lucie Melicharová, Managing Director, learn2grow</p>
 </article>
 
-<!-- Cookie Consent Banner -->
-<div class="cookie-banner" id="cookieBanner">
-    <div class="cookie-content">
-        <div class="cookie-text">
-            <p><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p>
-        </div>
-        <div class="cookie-buttons">
-            <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
-            <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Accept</button>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer id="contact" style="background: #F8FAFC; color: var(--text); padding: 4rem 0 2rem 0;">
-    <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
-        <div class="footer-grid">
-            <div>
-                <img src="/images/Logo.jpeg" alt="learn2grow" style="height: 60px; margin-bottom: 2rem; border-radius: 8px;" />
-                <div style="color: var(--text); line-height: 1.8;">
-                    <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">learn2grow s. r. o.</strong></p>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Prague, Czech Republic</p>
-                    <p style="margin-bottom: 0.5rem; color: var(--text-light);">(+420) 773 923 402</p>
-                    <p style="color: var(--text-light);">info@learn2grow.cz</p>
-                </div>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerServices">Services</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 0.75rem;"><a href="/#headhunting" class="footer-link" data-i18n="headhuntingTitle">Headhunting</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="/#hr-consulting" class="footer-link" data-i18n="hrTitle">HR Consulting</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerCompany">Company</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 0.75rem;"><a href="/#about" class="footer-link" data-i18n="footerAbout">About Us</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="/#team" class="footer-link" data-i18n="footerTeam">Team</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="/insights" class="footer-link" data-i18n="footerInsights">Insights</a></li>
-
-                </ul>
-            </div>
-        </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <p style="color: var(--text-light); font-size: 0.9rem;" data-i18n="copyright">Copyright © 2002–2026 learn2grow</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="https://www.linkedin.com/company/learn2grow" target="_blank" rel="noopener noreferrer" aria-label="Visit learn2grow on LinkedIn" class="social-btn">in</a>
-                <a href="mailto:info@learn2grow.cz" aria-label="Send email to learn2grow" class="social-btn">✉</a>
-            </div>
-        </div>
-    </div>
-</footer>
+<Footer />
 
 </Layout>
 
 <style is:global>
-
-/* Article Header */
-.article-header { margin-top: 70px; background: linear-gradient(135deg, #fff, #ffe8d1); padding: 5rem 2rem 3rem; text-align: center; }
-.article-category-badge { display: inline-block; padding: 0.5rem 1.2rem; background: var(--orange); color: #fff; font-size: 0.8rem; font-weight: 600; border-radius: 20px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; }
-.article-title { font-family: 'DM Sans', sans-serif; font-size: 3.5rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; line-height: 1.2; }
-.article-subtitle { font-size: 1.5rem; color: var(--text-light); font-style: italic; margin-bottom: 1.5rem; }
-.article-meta { font-size: 0.95rem; color: var(--text-light); }
-
-/* Article Body */
-.article-content { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
-.back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--orange); text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: gap 0.3s ease; }
-.back-link:hover { gap: 0.75rem; }
-.article-image { margin: 2rem 0 3rem; text-align: center; }
-.article-image img { width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-.article-intro { font-size: 1.2rem; line-height: 1.8; color: var(--text); margin-bottom: 3rem; padding: 2rem; background: #fff; border-left: 4px solid var(--orange); border-radius: 8px; }
-.article-lead { font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 2.5rem; }
-
-/* Infographic */
-.article-infographic { margin: 2.5rem 0 3rem; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
-.article-infographic svg { display: block; width: 100%; height: auto; }
-
-/* Article Sections */
-.article-section { margin-bottom: 3rem; }
-.article-section h2 { font-family: 'DM Sans', sans-serif; font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem; line-height: 1.3; }
-.article-section p { font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
-.article-section ul { margin: 1.5rem 0 1.5rem 2rem; list-style: none; }
-.article-section ul li { font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 0.75rem; position: relative; padding-left: 1.5rem; }
-.article-section ul li::before { content: "•"; position: absolute; left: 0; color: var(--orange); font-weight: 700; font-size: 1.5rem; }
-
-/* Conclusion */
-.article-conclusion { margin-top: 4rem; padding: 2.5rem; background: linear-gradient(135deg, #fff7ed, #ffedd5); border-radius: 12px; }
-.article-conclusion h2 { font-family: 'DM Sans', sans-serif; font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem; }
-.article-conclusion p { font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 0.75rem; }
-
-/* Source note */
-.article-source { font-size: 0.9rem; color: var(--text-light); margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
-
-/* Footer */
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
-.footer-link { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; }
-.footer-link:hover { color: var(--orange); }
-.social-btn { width: 44px; height: 44px; background: white; border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; }
-.social-btn:hover { background: var(--orange); border-color: var(--orange); color: white; transform: translateY(-3px); }
-
-/* Cookie Banner */
-.cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(30,30,30,0.98); backdrop-filter: blur(10px); color: #fff; padding: 1.5rem 2rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); z-index: 10000; display: none; animation: slideUp 0.4s ease-out; }
-.cookie-banner.show { display: block; }
-@keyframes slideUp { 0% { transform: translateY(100%); } 100% { transform: translateY(0); } }
-.cookie-content { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-.cookie-text { flex: 1; min-width: 300px; }
-.cookie-text p { margin: 0; font-size: 0.95rem; line-height: 1.6; opacity: 0.9; }
-.cookie-text a { color: var(--orange); text-decoration: underline; }
-.cookie-buttons { display: flex; gap: 1rem; flex-shrink: 0; }
-.cookie-btn { padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; font-family: 'DM Sans', sans-serif; }
-.cookie-btn--accept { background: var(--orange); color: #fff; }
-.cookie-btn--accept:hover { background: #ea580c; transform: translateY(-2px); }
-.cookie-btn--decline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
-.cookie-btn--decline:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.1); }
-
-/* Responsive */
-@media (max-width: 900px) {
-    .article-title { font-size: 2.5rem; }
-    .article-subtitle { font-size: 1.2rem; }
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-}
-@media (max-width: 768px) {
-    .cookie-content { flex-direction: column; text-align: center; }
-    .cookie-buttons { width: 100%; justify-content: center; }
-}
+    .article-title {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    .article-subtitle {
+        font-size: 1.5rem;
+        color: var(--text-light);
+        font-style: italic;
+        margin-bottom: 1.5rem;
+    }
+    .article-meta { font-size: 0.95rem; color: var(--text-light); }
+    @media (max-width: 900px) {
+        .article-title { font-size: 2.5rem; }
+        .article-subtitle { font-size: 1.2rem; }
+    }
 </style>
 
 <script>
+    import { sharedTranslations } from '../i18n/translations';
+
 const langBtns = document.querySelectorAll('.lang-btn') as NodeListOf<HTMLButtonElement>;
 let currentLang: string = localStorage.getItem('language') || 'en';
 
 const translations: Record<string, Record<string, string>> = {
     en: {
-        navHeadhunting: 'HEADHUNTING', navHRConsulting: 'HR CONSULTING',
-        navAboutUs: 'ABOUT US', navInsights: 'INSIGHTS', navContact: 'CONTACT',
-        headhuntingTitle: 'Headhunting', hrTitle: 'HR Consulting',
-        footerServices: 'Services', footerCompany: 'Company',
-        footerAbout: 'About Us', footerTeam: 'Team', footerInsights: 'Insights',
-        copyright: 'Copyright © 2002–2026 learn2grow',
+        ...sharedTranslations.en,
         // Article header
         articleCategory: 'Articles',
         articleTitle: 'HR Lessons from Behavioral Economics',
         articleSubtitle: 'How the science of human decision-making can transform the employee experience',
         articleDate: 'April 1, 2016',
-        backToInsights: 'Back to Insights',
         // Article body
         articleIntro: 'Data has given us unprecedented ability to understand human behaviour. Yet meaningful interpretation remains elusive — because human behaviour is often irrational. Behavioral economics offers HR professionals a new lens: a bridge between the rational analytical world and the often inconsistent reality of how people actually make decisions.',
         articleLead: 'Marketing professionals have long used behavioral economics to shape consumer choices. HR is only beginning to catch up. Below are three foundational lessons — and how each one can change how we design programmes and decisions at work.',
@@ -340,18 +236,12 @@ const translations: Record<string, Record<string, string>> = {
         source: 'Originally published in HR Forum, December 2015 · Lucie Melicharová, Managing Director, learn2grow',
     },
     cs: {
-        navHeadhunting: 'HEADHUNTING', navHRConsulting: 'HR PORADENSTVÍ',
-        navAboutUs: 'O NÁS', navInsights: 'NOVINKY', navContact: 'KONTAKT',
-        headhuntingTitle: 'Headhunting', hrTitle: 'HR Poradenství',
-        footerServices: 'Služby', footerCompany: 'Společnost',
-        footerAbout: 'O nás', footerTeam: 'Tým', footerInsights: 'Novinky',
-        copyright: 'Copyright © 2002–2026 learn2grow',
+        ...sharedTranslations.cs,
         // Article header
         articleCategory: 'Články',
         articleTitle: 'Poznatky z behaviorální ekonomie pro HR',
         articleSubtitle: 'Jak věda o lidském rozhodování může transformovat zkušenost zaměstnanců',
         articleDate: '1. dubna 2016',
-        backToInsights: 'Zpět na novinky',
         // Article body
         articleIntro: 'Data nám dávají bezprecedentní možnost porozumět lidskému chování. Přesto zůstává jejich smysluplná interpretace složitou výzvou — lidské chování je totiž nepředvídatelné a zdaleka ne vždy racionální. Behaviorální ekonomie nabízí HR profesionálům nový pohled: most mezi analytickým světem a iracionální realitou toho, jak lidé skutečně rozhodují.',
         articleLead: 'Marketingoví odborníci využívají behaviorální ekonomii k ovlivňování spotřebitelského chování už dlouho. HR teprve dohání ztracené. Níže jsou tři základní poznatky — a jak každý z nich může změnit způsob, jakým navrhujeme programy a rozhodnutí na pracovišti.',
@@ -399,8 +289,4 @@ window.addEventListener('scroll', () => {
     document.querySelector('nav')!.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-const cookieBanner = document.getElementById('cookieBanner')!;
-if (!localStorage.getItem('cookieConsent')) setTimeout(() => cookieBanner.classList.add('show'), 1000);
-document.getElementById('cookieAccept')!.addEventListener('click', () => { localStorage.setItem('cookieConsent', 'accepted'); cookieBanner.classList.remove('show'); });
-document.getElementById('cookieDecline')!.addEventListener('click', () => { localStorage.setItem('cookieConsent', 'declined'); cookieBanner.classList.remove('show'); });
 </script>

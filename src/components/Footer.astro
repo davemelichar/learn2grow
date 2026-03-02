@@ -1,0 +1,239 @@
+---
+// Shared footer component used across all pages.
+// Cookie banner, social links, and navigation columns included.
+---
+
+<!-- Cookie Consent Banner -->
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <p>We respect high standards of privacy protection. Read more about our <a href="/privacy">Privacy Policy</a>.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
+            <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Accept</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="contact" style="background: var(--primary); color: #fff; padding: 4rem 0 0 0;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4rem; padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.08);">
+            <div>
+                <h4
+                    style="margin-bottom: 1.25rem; font-family: 'DM Sans Variable', 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #F97316;"
+                >
+                    Contact
+                </h4>
+                <div style="line-height: 1.9;">
+                    <p style="margin-bottom: 0.25rem; color: rgba(255,255,255,0.55); font-size: 0.95rem;">
+                        <strong style="color: #fff; font-weight: 600;">learn2grow s. r. o.</strong>
+                    </p>
+                    <p style="margin-bottom: 0.25rem; color: rgba(255,255,255,0.55); font-size: 0.95rem;">Prague, Czech Republic</p>
+                    <p style="margin-bottom: 0.25rem; color: rgba(255,255,255,0.55); font-size: 0.95rem;">(+420) 773 923 402</p>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 0.95rem;">info@learn2grow.cz</p>
+                </div>
+                <div style="display: flex; gap: 0.75rem; margin-top: 1.25rem;">
+                    <a
+                        href="https://www.linkedin.com/company/learn2grow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit learn2grow on LinkedIn"
+                        class="footer-social-btn">in</a
+                    >
+                    <a href="mailto:info@learn2grow.cz" aria-label="Send email to learn2grow" class="footer-social-btn">✉</a>
+                </div>
+            </div>
+            <div>
+                <h4
+                    style="margin-bottom: 1.25rem; font-family: 'DM Sans Variable', 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #F97316;"
+                    data-i18n="footerServices"
+                >
+                    Services
+                </h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.65rem;"><a href="/#headhunting" class="footer-dark-link" data-i18n="headhuntingTitle">Headhunting</a></li>
+                    <li style="margin-bottom: 0.65rem;"><a href="/#hr-consulting" class="footer-dark-link" data-i18n="hrTitle">HR Consulting</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4
+                    style="margin-bottom: 1.25rem; font-family: 'DM Sans Variable', 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #F97316;"
+                    data-i18n="footerCompany"
+                >
+                    Company
+                </h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.65rem;"><a href="/#about" class="footer-dark-link" data-i18n="footerAbout">About Us</a></li>
+                    <li style="margin-bottom: 0.65rem;"><a href="/#team" class="footer-dark-link" data-i18n="footerTeam">Team</a></li>
+                    <li style="margin-bottom: 0.65rem;"><a href="/insights" class="footer-dark-link" data-i18n="footerInsights">Insights</a></li>
+                </ul>
+                <div style="margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                    <p style="color: rgba(255,255,255,0.35); font-size: 0.78rem; line-height: 1.6; margin-bottom: 0.6rem;">
+                        We respect your privacy. Personal data is handled in accordance with applicable data protection law.
+                    </p>
+                    <a href="/privacy" class="footer-privacy-link">Privacy Policy →</a>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.08);">
+            <p style="color: rgba(255,255,255,0.3); font-size: 0.82rem;" data-i18n="copyright">Copyright © 2002–2026 learn2grow</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const cookieBanner = document.getElementById('cookieBanner')!;
+    const consent = localStorage.getItem('cookieConsent');
+    if (!consent) setTimeout(() => cookieBanner.classList.add('show'), 1000);
+    document.getElementById('cookieAccept')!.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        cookieBanner.classList.remove('show');
+    });
+    document.getElementById('cookieDecline')!.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        cookieBanner.classList.remove('show');
+    });
+</script>
+
+<style is:global>
+    /* ─── Footer ─────────────────────────────────────────────── */
+    .footer-social-btn {
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    .footer-social-btn:hover {
+        background: var(--orange);
+        border-color: var(--orange);
+        color: #fff;
+        transform: translateY(-3px);
+    }
+    .footer-dark-link {
+        color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+    }
+    .footer-dark-link:hover {
+        color: var(--orange);
+    }
+    .footer-privacy-link {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.82rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .footer-privacy-link:hover {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ─── Cookie Banner ───────────────────────────────────────── */
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(30, 30, 30, 0.98);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 10000;
+        display: none;
+        animation: slideUp 0.4s ease-out;
+    }
+    .cookie-banner.show {
+        display: block;
+    }
+    @keyframes slideUp {
+        0% {
+            transform: translateY(100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    .cookie-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    .cookie-text {
+        flex: 1;
+        min-width: 300px;
+    }
+    .cookie-text p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+    .cookie-text a {
+        color: var(--orange);
+        text-decoration: underline;
+    }
+    .cookie-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-shrink: 0;
+    }
+    .cookie-btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'DM Sans Variable', 'DM Sans', sans-serif;
+    }
+    .cookie-btn--accept {
+        background: var(--orange);
+        color: #fff;
+    }
+    .cookie-btn--accept:hover {
+        background: #ea580c;
+        transform: translateY(-2px);
+    }
+    .cookie-btn--decline {
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .cookie-btn--decline:hover {
+        border-color: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ─── Footer Responsive ───────────────────────────────────── */
+    @media (max-width: 768px) {
+        .cookie-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        .cookie-buttons {
+            width: 100%;
+            justify-content: center;
+        }
+        #contact > div > div:first-child {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+        }
+    }
+</style>

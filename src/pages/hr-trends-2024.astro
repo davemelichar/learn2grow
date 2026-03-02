@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/globals.css';
 ---
 
@@ -24,8 +25,8 @@ import '../styles/globals.css';
         <span data-i18n="backToInsights">Back to Insights</span>
     </a>
 
-    <div class="article-image">
-        <img src="/images/article4.jpg" alt="Business Friends Networking Breakfast" />
+    <div class="article-image-block">
+        <img loading="lazy" src="/images/article4.jpg" alt="Business Friends Networking Breakfast" />
     </div>
 
     <div class="article-intro">
@@ -41,118 +42,44 @@ import '../styles/globals.css';
     <p class="article-source" data-i18n="source">Source: LinkedIn</p>
 </article>
 
-<!-- Cookie Consent Banner -->
-<div class="cookie-banner" id="cookieBanner">
-    <div class="cookie-content">
-        <div class="cookie-text">
-            <p><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p>
-        </div>
-        <div class="cookie-buttons">
-            <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
-            <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Accept</button>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer id="contact" style="background: #F8FAFC; color: var(--text); padding: 4rem 0 2rem 0;">
-    <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
-        <div class="footer-grid">
-            <div>
-                <img src="/images/Logo.jpeg" alt="learn2grow" style="height: 60px; margin-bottom: 2rem; border-radius: 8px;" />
-                <div style="color: var(--text); line-height: 1.8;">
-                    <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">learn2grow s. r. o.</strong></p>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Prague, Czech Republic</p>
-                    <p style="margin-bottom: 0.5rem; color: var(--text-light);">(+420) 773 923 402</p>
-                    <p style="color: var(--text-light);">info@learn2grow.cz</p>
-                </div>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerServices">Services</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 0.75rem;"><a href="/#headhunting" class="footer-link" data-i18n="headhuntingTitle">Headhunting</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="/#hr-consulting" class="footer-link" data-i18n="hrTitle">HR Consulting</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerCompany">Company</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 0.75rem;"><a href="/#about" class="footer-link" data-i18n="footerAbout">About Us</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="/#team" class="footer-link" data-i18n="footerTeam">Team</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="/insights" class="footer-link" data-i18n="footerInsights">Insights</a></li>
-
-                </ul>
-            </div>
-        </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <p style="color: var(--text-light); font-size: 0.9rem;" data-i18n="copyright">Copyright © 2002–2026 learn2grow</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="https://www.linkedin.com/company/learn2grow" target="_blank" rel="noopener noreferrer" aria-label="Visit learn2grow on LinkedIn" class="social-btn">in</a>
-                <a href="mailto:info@learn2grow.cz" aria-label="Send email to learn2grow" class="social-btn">✉</a>
-            </div>
-        </div>
-    </div>
-</footer>
+<Footer />
 
 </Layout>
 
 <style is:global>
-
-.article-header { margin-top: 70px; background: linear-gradient(135deg, #fff, #ffe8d1); padding: 5rem 2rem 3rem; text-align: center; }
-.article-category-badge { display: inline-block; padding: 0.5rem 1.2rem; background: var(--orange); color: #fff; font-size: 0.8rem; font-weight: 600; border-radius: 20px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; }
-.article-title { font-family: 'DM Sans', sans-serif; font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; line-height: 1.2; max-width: 900px; margin-left: auto; margin-right: auto; }
-.article-meta { font-size: 0.95rem; color: var(--text-light); margin-top: 1rem; }
-
-.article-content { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
-.back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--orange); text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: gap 0.3s ease; }
-.back-link:hover { gap: 0.75rem; }
-.article-image { margin: 2rem 0 3rem; }
-.article-image img { width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-.article-intro { font-size: 1.2rem; line-height: 1.8; color: var(--text); margin-bottom: 3rem; padding: 2rem; background: #fff; border-left: 4px solid var(--orange); border-radius: 8px; }
-.article-section { margin-bottom: 2rem; }
-.article-section p { font-size: 1.1rem; line-height: 1.9; color: var(--text); margin-bottom: 1.5rem; }
-.article-source { font-size: 0.9rem; color: var(--text-light); margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
-
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
-.footer-link { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; }
-.footer-link:hover { color: var(--orange); }
-.social-btn { width: 44px; height: 44px; background: white; border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; }
-.social-btn:hover { background: var(--orange); border-color: var(--orange); color: white; transform: translateY(-3px); }
-
-.cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(30,30,30,0.98); backdrop-filter: blur(10px); color: #fff; padding: 1.5rem 2rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); z-index: 10000; display: none; animation: slideUp 0.4s ease-out; }
-.cookie-banner.show { display: block; }
-@keyframes slideUp { 0% { transform: translateY(100%); } 100% { transform: translateY(0); } }
-.cookie-content { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-.cookie-text { flex: 1; min-width: 300px; }
-.cookie-text p { margin: 0; font-size: 0.95rem; line-height: 1.6; opacity: 0.9; }
-.cookie-text a { color: var(--orange); text-decoration: underline; }
-.cookie-buttons { display: flex; gap: 1rem; flex-shrink: 0; }
-.cookie-btn { padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; font-family: 'DM Sans', sans-serif; }
-.cookie-btn--accept { background: var(--orange); color: #fff; }
-.cookie-btn--accept:hover { background: #ea580c; transform: translateY(-2px); }
-.cookie-btn--decline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
-.cookie-btn--decline:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.1); }
-
-@media (max-width: 900px) { .article-title { font-size: 2.2rem; } .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
-@media (max-width: 768px) { .nav-container { grid-template-columns: 1fr auto; } .nav-links { display: none; } .cookie-content { flex-direction: column; text-align: center; } .cookie-buttons { width: 100%; justify-content: center; } }
+    .article-title {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    .article-subtitle {
+        font-size: 1.5rem;
+        color: var(--text-light);
+        font-style: italic;
+        margin-bottom: 1.5rem;
+    }
+    .article-meta { font-size: 0.95rem; color: var(--text-light); }
+    @media (max-width: 900px) {
+        .article-title { font-size: 2.5rem; }
+        .article-subtitle { font-size: 1.2rem; }
+    }
 </style>
 
 <script>
+    import { sharedTranslations } from '../i18n/translations';
+
 const langBtns = document.querySelectorAll('.lang-btn') as NodeListOf<HTMLButtonElement>;
 let currentLang: string = localStorage.getItem('language') || 'en';
 
 const translations: Record<string, Record<string, string>> = {
     en: {
-        navHeadhunting: 'HEADHUNTING', navHRConsulting: 'HR CONSULTING',
-        navAboutUs: 'ABOUT US', navInsights: 'INSIGHTS', navContact: 'CONTACT',
-        headhuntingTitle: 'Headhunting', hrTitle: 'HR Consulting',
-        footerServices: 'Services', footerCompany: 'Company',
-        footerAbout: 'About Us', footerTeam: 'Team', footerInsights: 'Insights',
-        copyright: 'Copyright © 2002–2026 learn2grow',
+        ...sharedTranslations.en,
         articleCategory: 'News',
         articleTitle: 'An Inspiring Morning with Lucie Melicharová: Top 5 HR Trends for 2024',
         articleDate: 'February 19, 2024',
-        backToInsights: 'Back to Insights',
         articleIntro: 'Another networking breakfast organised by the Business Friends platform took place in the pleasant setting of the Hodkovičky Golf Club, featuring Lucie Melicharová as the guest speaker.',
         body1: 'Lucie presented the Top 5 HR trends for 2024 that are currently shaping the labour market. She focused on the evolving role of HR, the growing emphasis on people development, company culture, and the ability to respond to a rapidly changing work environment.',
         body2: 'The discussion centred particularly on workforce flexibility — how organisations adapt to hybrid work models, shifting employee expectations, and the generational dynamics of today\'s teams. The impact of AI on human resources was, naturally, a central thread running through the entire conversation.',
@@ -160,16 +87,10 @@ const translations: Record<string, Record<string, string>> = {
         source: 'Source: LinkedIn',
     },
     cs: {
-        navHeadhunting: 'HEADHUNTING', navHRConsulting: 'HR PORADENSTVÍ',
-        navAboutUs: 'O NÁS', navInsights: 'NOVINKY', navContact: 'KONTAKT',
-        headhuntingTitle: 'Headhunting', hrTitle: 'HR Poradenství',
-        footerServices: 'Služby', footerCompany: 'Společnost',
-        footerAbout: 'O nás', footerTeam: 'Tým', footerInsights: 'Novinky',
-        copyright: 'Copyright © 2002–2026 learn2grow',
+        ...sharedTranslations.cs,
         articleCategory: 'Aktuality',
         articleTitle: 'Inspirativní ráno s Lucií Melicharovou: Top 5 (nejen) HR trendů pro rok 2024',
         articleDate: '19. února 2024',
-        backToInsights: 'Zpět na novinky',
         articleIntro: 'Další síťovací snídaně platformy Business Friends proběhla v příjemném prostředí Golf Clubu Hodkovičky. Jako host vystoupila Lucie Melicharová.',
         body1: 'Lucie představila Top 5 HR trendů pro rok 2024, které aktuálně definují trh práce. Zaměřila se na proměnu role HR, větší důraz na rozvoj lidí, firemní kulturu a schopnost reagovat na rychle se měnící pracovní prostředí.',
         body2: 'Diskuze se věnovala zejména flexibilitě pracovní síly — jak se organizace adaptují na hybridní pracovní modely, měnící se očekávání zaměstnanců a generační dynamiku dnešních týmů. Vliv AI na lidské zdroje byl přirozeně ústředním tématem celé diskuse.',
@@ -196,8 +117,4 @@ window.addEventListener('scroll', () => {
     document.querySelector('nav')!.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-const cookieBanner = document.getElementById('cookieBanner')!;
-if (!localStorage.getItem('cookieConsent')) setTimeout(() => cookieBanner.classList.add('show'), 1000);
-document.getElementById('cookieAccept')!.addEventListener('click', () => { localStorage.setItem('cookieConsent', 'accepted'); cookieBanner.classList.remove('show'); });
-document.getElementById('cookieDecline')!.addEventListener('click', () => { localStorage.setItem('cookieConsent', 'declined'); cookieBanner.classList.remove('show'); });
 </script>

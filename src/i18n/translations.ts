@@ -1,0 +1,46 @@
+export const sharedTranslations: Record<string, Record<string, string>> = {
+    en: {
+        // Navigation
+        navHeadhunting: 'HEADHUNTING',
+        navHRConsulting: 'HR CONSULTING',
+        navAboutUs: 'ABOUT US',
+        navInsights: 'INSIGHTS',
+        navContact: 'CONTACT',
+        // Footer
+        footerContact: 'Contact',
+        footerServices: 'Services',
+        footerCompany: 'Company',
+        footerAbout: 'About Us',
+        footerTeam: 'Team',
+        footerInsights: 'Insights',
+        copyright: 'Copyright © 2002–2026 learn2grow',
+        privacyPolicy: 'Privacy Policy →',
+        privacyStatement: 'We respect your privacy. Personal data is handled in accordance with applicable data protection law.',
+        // Shared service labels
+        headhuntingTitle: 'Headhunting',
+        hrTitle: 'HR Consulting',
+        // Common UI
+        readMore: 'Read more',
+        backToInsights: 'Back to Insights',
+    },
+    cs: {
+        navHeadhunting: 'HEADHUNTING',
+        navHRConsulting: 'HR PORADENSTVÍ',
+        navAboutUs: 'O NÁS',
+        navInsights: 'NOVINKY',
+        navContact: 'KONTAKT',
+        footerContact: 'Kontakt',
+        footerServices: 'Služby',
+        footerCompany: 'Společnost',
+        footerAbout: 'O nás',
+        footerTeam: 'Tým',
+        footerInsights: 'Novinky',
+        copyright: 'Copyright © 2002–2026 learn2grow',
+        privacyPolicy: 'Zásady ochrany osobních údajů →',
+        privacyStatement: 'Respektujeme vaše soukromí. Osobní údaje zpracováváme v souladu s platnými předpisy o ochraně osobních údajů.',
+        headhuntingTitle: 'Headhunting',
+        hrTitle: 'HR Poradenství',
+        readMore: 'Číst více',
+        backToInsights: 'Zpět na novinky',
+    },
+};

@@ -1,413 +1,181 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/globals.css';
+
+const articles = await getCollection('articles');
+articles.sort((a, b) => a.data.order - b.data.order);
+
+const articlesData = articles.map(a => ({
+    id: a.id,
+    image: a.data.image,
+    category: a.data.category,
+    date_en: a.data.date_en,
+    date_cs: a.data.date_cs,
+    title_en: a.data.title_en,
+    title_cs: a.data.title_cs,
+    excerpt_en: a.data.excerpt_en,
+    excerpt_cs: a.data.excerpt_cs,
+}));
 ---
 
 <Layout title="Insights - learn2grow">
+    <Nav />
 
-<Nav />
+    <section class="hero">
+        <h1 data-i18n="insightsTitle">Insights</h1>
+        <p data-i18n="insightsDescription">
+            Explore our latest articles, research, and thought leadership on executive search, HR consulting, and organizational development.
+        </p>
+    </section>
 
-<!-- Hero -->
-<section class="hero">
-    <h1 data-i18n="insightsTitle">Insights</h1>
-    <p data-i18n="insightsDescription">Explore our latest articles, research, and thought leadership on executive search, HR consulting, and organizational development.</p>
-</section>
-
-<!-- Articles -->
-<main class="container">
-    <div class="articles-grid">
-
-        <article class="article-card">
-            <div class="article-image" style="background-image: url('/images/article1.jpg');">
-                <div class="article-category">
-                    <span class="category-badge" data-i18n="categoryArticles">Articles</span>
-                </div>
-            </div>
-            <div class="article-content">
-                <p class="article-date" data-i18n="article1Date">January 26, 2026</p>
-                <h2 class="article-title" data-i18n="article1Title">Leadership Through the Eyes of AI</h2>
-                <p class="article-excerpt" data-i18n="article1Excerpt">AI is taking hold in companies, and managers often have high expectations of AI. But what does AI actually expect from leaders?</p>
-                <a href="/leadership-ai" class="read-more" data-i18n="readMore">
-                    Read more
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-            </div>
-        </article>
-
-        <article class="article-card">
-            <div class="article-image" style="background-image: url('/images/article2.jpg');">
-                <div class="article-category">
-                    <span class="category-badge" data-i18n="categoryNews">News</span>
-                </div>
-            </div>
-            <div class="article-content">
-                <p class="article-date" data-i18n="article2Date">December 12, 2025</p>
-                <h2 class="article-title" data-i18n="article2Title">Preparing Leaders for the Era of Physical AI</h2>
-                <p class="article-excerpt" data-i18n="article2Excerpt">Lucie Melicharová at Exponential Circles discussing what the Physical AI revolution means for business and human resources.</p>
-                <a href="/exponential-circles" class="read-more" data-i18n="readMore">
-                    Read more
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-            </div>
-        </article>
-
-        <article class="article-card">
-            <div class="article-image" style="background-image: url('/images/article3.jpg');">
-                <div class="article-category">
-                    <span class="category-badge" data-i18n="categoryNews">News</span>
-                </div>
-            </div>
-            <div class="article-content">
-                <p class="article-date" data-i18n="article3Date">January 13, 2025</p>
-                <h2 class="article-title" data-i18n="article3Title">ESG in Practice: Supporting Clients on Their Sustainability Journey</h2>
-                <p class="article-excerpt" data-i18n="article3Excerpt">Real change within an organization starts with people and their understanding of new challenges.</p>
-                <a href="/esg-in-practice" class="read-more" data-i18n="readMore">
-                    Read more
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-            </div>
-        </article>
-
-        <article class="article-card">
-            <div class="article-image" style="background-image: url('/images/article4.jpg');">
-                <div class="article-category">
-                    <span class="category-badge" data-i18n="categoryNews">News</span>
-                </div>
-            </div>
-            <div class="article-content">
-                <p class="article-date" data-i18n="article4Date">February 19, 2024</p>
-                <h2 class="article-title" data-i18n="article4Title">Top 5 HR Trends for 2024</h2>
-                <p class="article-excerpt" data-i18n="article4Excerpt">Lucie Melicharová at the Business Friends networking breakfast, sharing the top HR trends shaping the labour market in 2024.</p>
-                <a href="/hr-trends-2024" class="read-more" data-i18n="readMore">
-                    Read more
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-            </div>
-        </article>
-
-        <article class="article-card">
-            <div class="article-image" style="background-image: url('/images/article5.jpg');">
-                <div class="article-category">
-                    <span class="category-badge" data-i18n="categoryNews">News</span>
-                </div>
-            </div>
-            <div class="article-content">
-                <p class="article-date" data-i18n="article5Date">May 18, 2023</p>
-                <h2 class="article-title" data-i18n="article5Title">Talent, Learning, and the Future of AI</h2>
-                <p class="article-excerpt" data-i18n="article5Excerpt">Lucie Melicharová speaks in a panel discussion with Texas A&M students on how AI and technology are reshaping the labour market.</p>
-                <a href="/talent-learning-ai-2023" class="read-more" data-i18n="readMore">
-                    Read more
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-            </div>
-        </article>
-
-        <article class="article-card">
-            <div class="article-image" style="background-image: url('/images/article6.jpg');">
-                <div class="article-category">
-                    <span class="category-badge" data-i18n="categoryNews">News</span>
-                </div>
-            </div>
-            <div class="article-content">
-                <p class="article-date" data-i18n="article6Date">March 30, 2022</p>
-                <h2 class="article-title" data-i18n="article6Title">Well-being in the Workplace — University of Connecticut</h2>
-                <p class="article-excerpt" data-i18n="article6Excerpt">Lucie Melicharová as guest speaker for the Executive MBA at UConn, discussing well-being trends in a disrupted world.</p>
-                <a href="/wellbeing-workplace-2022" class="read-more" data-i18n="readMore">
-                    Read more
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-            </div>
-        </article>
-
-        <article class="article-card">
-            <div class="article-image" style="background-image: url('/images/article7.jpg');">
-                <div class="article-category">
-                    <span class="category-badge" data-i18n="categoryNews">News</span>
-                </div>
-            </div>
-            <div class="article-content">
-                <p class="article-date" data-i18n="article7Date">December 8, 2021</p>
-                <h2 class="article-title" data-i18n="article7Title">Diversity &amp; Inclusion Project</h2>
-                <p class="article-excerpt" data-i18n="article7Excerpt">A visual maps workshop on diversity and inclusion for Home Credit International — helping teams understand and navigate complex organisational topics.</p>
-                <a href="/diversity-inclusion" class="read-more" data-i18n="readMore">
-                    Read more
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-            </div>
-        </article>
-
-        <article class="article-card">
-            <div class="article-image" style="background-image: url('/images/article8.jpg');">
-                <div class="article-category">
-                    <span class="category-badge" data-i18n="categoryNews">News</span>
-                </div>
-            </div>
-            <div class="article-content">
-                <p class="article-date" data-i18n="article8Date">May 31, 2021</p>
-                <h2 class="article-title" data-i18n="article8Title">Workshop for Emerging Leaders — Loyola University Maryland</h2>
-                <p class="article-excerpt" data-i18n="article8Excerpt">Lucie Melicharová presents on recruitment and talent acquisition to the Emerging Leaders MBA Class 2021 at Loyola University Maryland.</p>
-                <a href="/recruitment-talent-acquisition-2021" class="read-more" data-i18n="readMore">
-                    Read more
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-            </div>
-        </article>
-
-        <article class="article-card">
-            <div class="article-image" style="background-image: url('/images/article9.jpg');">
-                <div class="article-category">
-                    <span class="category-badge" data-i18n="categoryArticles">Articles</span>
-                </div>
-            </div>
-            <div class="article-content">
-                <p class="article-date" data-i18n="article9Date">April 1, 2016</p>
-                <h2 class="article-title" data-i18n="article9Title">HR Lessons from Behavioral Economics</h2>
-                <p class="article-excerpt" data-i18n="article9Excerpt">Three powerful insights from behavioral economics that every HR professional should know — and how to apply them to create better employee experiences.</p>
-                <a href="/hr-lessons-behavioral-economics" class="read-more" data-i18n="readMore">
-                    Read more
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                </a>
-            </div>
-        </article>
-
-    </div>
-</main>
-
-<!-- Cookie Consent Banner -->
-<div class="cookie-banner" id="cookieBanner">
-    <div class="cookie-content">
-        <div class="cookie-text">
-            <p><span data-i18n="privacyText">We respect high standards of privacy protection. Read more about our</span> <a href="/privacy-policy" data-i18n="privacyLink">Privacy Policy and Cookie Statement</a>.</p>
+    <main class="container">
+        <div class="articles-grid">
+            {articles.map(a => (
+                <article class="article-card">
+                    <div class="article-image" style={`background-image: url('${a.data.image}');`}>
+                        <div class="article-category">
+                            <span class="category-badge" data-i18n={`${a.id}_category`}>{a.data.category}</span>
+                        </div>
+                    </div>
+                    <div class="article-body">
+                        <p class="article-date" data-i18n={`${a.id}_date`}>{a.data.date_en}</p>
+                        <h2 class="article-title" data-i18n={`${a.id}_title`}>{a.data.title_en}</h2>
+                        <p class="article-excerpt" data-i18n={`${a.id}_excerpt`}>{a.data.excerpt_en}</p>
+                        <a href={`/${a.id}`} class="read-more-link" data-i18n="readMore">
+                            Read more
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                ><path d="M5 12h14M12 5l7 7-7 7"></path></svg
+                            >
+                        </a>
+                    </div>
+                </article>
+            ))}
         </div>
-        <div class="cookie-buttons">
-            <button class="cookie-btn cookie-btn--decline" id="cookieDecline">Decline</button>
-            <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Accept</button>
-        </div>
-    </div>
-</div>
+    </main>
 
-<!-- Footer -->
-<footer id="contact" style="background: #F8FAFC; color: var(--text); padding: 4rem 0 2rem 0;">
-    <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
-        <div class="footer-grid">
-            <div>
-                <img src="/images/Logo.jpeg" alt="learn2grow" style="height: 60px; margin-bottom: 2rem; border-radius: 8px;" />
-                <div style="color: var(--text); line-height: 1.8;">
-                    <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary);">learn2grow s. r. o.</strong></p>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Prague, Czech Republic</p>
-                    <p style="margin-bottom: 0.5rem; color: var(--text-light);">(+420) 773 923 402</p>
-                    <p style="color: var(--text-light);">info@learn2grow.cz</p>
-                </div>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerServices">Services</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 0.75rem;"><a href="/#headhunting" class="footer-link" data-i18n="headhuntingTitle">Headhunting</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="/#hr-consulting" class="footer-link" data-i18n="hrTitle">HR Consulting</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 1.5rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--primary);" data-i18n="footerCompany">Company</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 0.75rem;"><a href="/#about" class="footer-link" data-i18n="footerAbout">About Us</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="/#team" class="footer-link" data-i18n="footerTeam">Team</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="/#insights" class="footer-link" data-i18n="footerInsights">Insights</a></li>
-
-                </ul>
-            </div>
-        </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <p style="color: var(--text-light); font-size: 0.9rem;" data-i18n="copyright">Copyright © 2002–2026 learn2grow</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="https://www.linkedin.com/company/learn2grow" target="_blank" rel="noopener noreferrer" aria-label="Visit learn2grow on LinkedIn" class="social-btn">in</a>
-                <a href="mailto:info@learn2grow.cz" aria-label="Send email to learn2grow" class="social-btn">✉</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
+    <Footer />
 </Layout>
 
 <style is:global>
-
-/* ─── Hero ────────────────────────────────────────────────── */
-.hero {
-    margin-top: 70px;
-    background: linear-gradient(135deg, #fff, #ffe8d1);
-    padding: 6rem 2rem 4rem;
-    text-align: center;
-}
-.hero h1 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 3.5rem; font-weight: 700;
-    color: var(--primary); margin-bottom: 1rem;
-}
-.hero p { font-size: 1.2rem; color: var(--text-light); max-width: 700px; margin: 0 auto; }
-
-/* ─── Articles ────────────────────────────────────────────── */
-.container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
-.articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 3rem; margin-bottom: 4rem; }
-.article-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); transition: all 0.3s ease; display: flex; flex-direction: column; }
-.article-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
-.article-image { height: 240px; background-size: cover; background-position: center; position: relative; }
-.article-category { position: absolute; bottom: 1.5rem; left: 1.5rem; }
-.category-badge { display: inline-block; padding: 0.5rem 1.2rem; background: rgba(255,255,255,0.95); color: var(--orange); font-size: 0.8rem; font-weight: 600; border-radius: 20px; letter-spacing: 0.05em; text-transform: uppercase; }
-.article-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
-.article-date { font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.75rem; }
-.article-title { font-family: 'DM Sans', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; line-height: 1.4; }
-.article-excerpt { font-size: 0.95rem; color: var(--text); line-height: 1.7; margin-bottom: 1.5rem; flex-grow: 1; }
-.read-more { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--orange); font-weight: 600; text-decoration: none; font-size: 0.95rem; transition: gap 0.3s ease; }
-.read-more:hover { gap: 0.75rem; }
-
-/* ─── Footer ──────────────────────────────────────────────── */
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
-.footer-link { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; }
-.footer-link:hover { color: var(--orange); }
-.social-btn { width: 44px; height: 44px; background: white; border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; }
-.social-btn:hover { background: var(--orange); border-color: var(--orange); color: white; transform: translateY(-3px); }
-
-/* ─── Cookie Banner ───────────────────────────────────────── */
-.cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(30,30,30,0.98); backdrop-filter: blur(10px); color: #fff; padding: 1.5rem 2rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); z-index: 10000; display: none; animation: slideUp 0.4s ease-out; }
-.cookie-banner.show { display: block; }
-@keyframes slideUp { 0% { transform: translateY(100%); } 100% { transform: translateY(0); } }
-.cookie-content { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-.cookie-text { flex: 1; min-width: 300px; }
-.cookie-text p { margin: 0; font-size: 0.95rem; line-height: 1.6; opacity: 0.9; }
-.cookie-text a { color: var(--orange); text-decoration: underline; }
-.cookie-buttons { display: flex; gap: 1rem; flex-shrink: 0; }
-.cookie-btn { padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; font-family: 'DM Sans', sans-serif; }
-.cookie-btn--accept { background: var(--orange); color: #fff; }
-.cookie-btn--accept:hover { background: #ea580c; transform: translateY(-2px); }
-.cookie-btn--decline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
-.cookie-btn--decline:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.1); }
-
-/* ─── Responsive ──────────────────────────────────────────── */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .articles-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .cookie-content { flex-direction: column; text-align: center; }
-    .cookie-buttons { width: 100%; justify-content: center; }
-}
+    .hero {
+        margin-top: 70px;
+        background: linear-gradient(135deg, #fff, #ffe8d1);
+        padding: 6rem 2rem 4rem;
+        text-align: center;
+    }
+    .hero h1 {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+    .articles-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 3rem;
+        margin-bottom: 4rem;
+    }
+    .article-image {
+        height: 240px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    .article-category {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+    }
+    .article-title {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 2.5rem; }
+        .articles-grid { grid-template-columns: 1fr; }
+    }
 </style>
 
+<script define:vars={{ articlesData }}>
+    window.__articlesData = articlesData;
+</script>
+
 <script>
-const langBtns = document.querySelectorAll('.lang-btn') as NodeListOf<HTMLButtonElement>;
-let currentLang: string = localStorage.getItem('language') || 'en';
+    import { sharedTranslations } from '../i18n/translations';
 
-const translations: Record<string, Record<string, string>> = {
-    en: {
-        navHeadhunting: 'HEADHUNTING', navHRConsulting: 'HR CONSULTING',
-        navAboutUs: 'ABOUT US', navInsights: 'INSIGHTS', navContact: 'CONTACT',
-        insightsTitle: 'Insights',
-        insightsDescription: 'Explore our latest articles, research, and thought leadership on executive search, HR consulting, and organizational development.',
-        categoryArticles: 'Articles',
-        categoryNews: 'News',
-        article1Date: 'January 26, 2026',
-        article1Title: 'Leadership Through the Eyes of AI',
-        article1Excerpt: 'AI is taking hold in companies, and managers often have high expectations of AI. But what does AI actually expect from leaders?',
-        article2Date: 'December 12, 2025',
-        article2Title: 'Preparing Leaders for the Era of Physical AI',
-        article2Excerpt: 'Lucie Melicharová at Exponential Circles discussing what the Physical AI revolution means for business and human resources.',
-        article3Date: 'January 13, 2025',
-        article3Title: 'ESG in Practice: Supporting Clients on Their Sustainability Journey',
-        article3Excerpt: 'Real change within an organization starts with people and their understanding of new challenges.',
-        article4Date: 'February 19, 2024',
-        article4Title: 'Top 5 HR Trends for 2024',
-        article4Excerpt: 'Lucie Melicharová at the Business Friends networking breakfast, sharing the top HR trends shaping the labour market in 2024.',
-        article5Date: 'May 18, 2023',
-        article5Title: 'Talent, Learning, and the Future of AI',
-        article5Excerpt: 'Lucie Melicharová speaks in a panel discussion with Texas A&M students on how AI and technology are reshaping the labour market.',
-        article6Date: 'March 30, 2022',
-        article6Title: 'Well-being in the Workplace — University of Connecticut',
-        article6Excerpt: 'Lucie Melicharová as guest speaker for the Executive MBA at UConn, discussing well-being trends in a disrupted world.',
-        article7Date: 'December 8, 2021',
-        article7Title: 'Diversity & Inclusion Project',
-        article7Excerpt: 'A visual maps workshop on diversity and inclusion for Home Credit International — helping teams understand and navigate complex organisational topics.',
-        article8Date: 'May 31, 2021',
-        article8Title: 'Workshop for Emerging Leaders — Loyola University Maryland',
-        article8Excerpt: 'Lucie Melicharová presents on recruitment and talent acquisition to the Emerging Leaders MBA Class 2021 at Loyola University Maryland.',
-        article9Date: 'April 1, 2016',
-        article9Title: 'HR Lessons from Behavioral Economics',
-        article9Excerpt: 'Three powerful insights from behavioral economics that every HR professional should know — and how to apply them to create better employee experiences.',
-        readMore: 'Read more',
-        headhuntingTitle: 'Headhunting', hrTitle: 'HR Consulting',
-        footerServices: 'Services', footerCompany: 'Company',
-        footerAbout: 'About Us', footerTeam: 'Team', footerInsights: 'Insights',
-        copyright: 'Copyright © 2002–2026 learn2grow',
-    },
-    cs: {
-        navHeadhunting: 'HEADHUNTING', navHRConsulting: 'HR PORADENSTVÍ',
-        navAboutUs: 'O NÁS', navInsights: 'NOVINKY', navContact: 'KONTAKT',
-        insightsTitle: 'Novinky',
-        insightsDescription: 'Prozkoumejte naše nejnovější články, výzkum a myšlenkové vedení v oblasti executive search, HR poradenství a organizačního rozvoje.',
-        categoryArticles: 'Články',
-        categoryNews: 'Aktuality',
-        article1Date: '26. ledna 2026',
-        article1Title: 'Vedení Očima AI',
-        article1Excerpt: 'AI se v firmách prosazuje a manažeři od ní často mají vysoká očekávání. Co ale AI očekává od lídrů?',
-        article2Date: '12. prosince 2025',
-        article2Title: 'Příprava lídrů na éru Physical AI',
-        article2Excerpt: 'Lucie Melicharová na Exponential Circles diskutuje, co revoluce Physical AI znamená pro byznys a lidské zdroje.',
-        article3Date: '13. ledna 2025',
-        article3Title: 'ESG v praxi: Pomáháme klientům na cestě k udržitelnosti',
-        article3Excerpt: 'Skutečná změna v organizaci začíná u lidí a jejich porozumění novým výzvám.',
-        article4Date: '19. února 2024',
-        article4Title: 'Top 5 HR trendů pro rok 2024',
-        article4Excerpt: 'Lucie Melicharová na síťovací snídani Business Friends sdílela top HR trendy, které aktuálně definují trh práce.',
-        article5Date: '18. května 2023',
-        article5Title: 'Talenty, vzdělávání a budoucnost AI',
-        article5Excerpt: 'Lucie Melicharová jako speaker v panelové diskusi se studenty Texas A&M o tom, jak AI a technologie mění trh práce.',
-        article6Date: '30. března 2022',
-        article6Title: 'Pohoda na pracovišti — University of Connecticut',
-        article6Excerpt: 'Lucie Melicharová jako hostující přednášející pro Executive MBA na UConn, diskuse o trendech well-being v turbulentním světě.',
-        article7Date: '8. prosince 2021',
-        article7Title: 'Projekt Diverzita a inkluze',
-        article7Excerpt: 'Workshop vizuálních map na téma diverzity a inkluze pro Home Credit International — pomáháme týmům pochopit složitá organizační témata.',
-        article8Date: '31. května 2021',
-        article8Title: 'Workshop pro studenty MBA z Loyola University',
-        article8Excerpt: 'Lucie Melicharová prezentuje o získávání a rozvoji talentů pro Emerging Leaders MBA Class 2021 z Loyola University Maryland.',
-        article9Date: '1. dubna 2016',
-        article9Title: 'Poznatky z behaviorální ekonomie pro HR',
-        article9Excerpt: 'Tři zásadní poznatky z behaviorální ekonomie, které by měl znát každý HR profesionál — a jak je využít k vytvoření lepší zkušenosti zaměstnanců.',
-        readMore: 'Číst více',
-        headhuntingTitle: 'Headhunting', hrTitle: 'HR Poradenství',
-        footerServices: 'Služby', footerCompany: 'Společnost',
-        footerAbout: 'O nás', footerTeam: 'Tým', footerInsights: 'Novinky',
-        copyright: 'Copyright © 2002–2026 learn2grow',
+    const langBtns = document.querySelectorAll('.lang-btn') as NodeListOf<HTMLButtonElement>;
+    let currentLang: string = localStorage.getItem('language') || 'en';
+
+    type ArticleData = {
+        id: string; category: string;
+        date_en: string; date_cs: string;
+        title_en: string; title_cs: string;
+        excerpt_en: string; excerpt_cs: string;
+    };
+    const articlesData: ArticleData[] = (window as any).__articlesData || [];
+
+    const articleTranslations = { en: {} as Record<string, string>, cs: {} as Record<string, string> };
+    for (const a of articlesData) {
+        articleTranslations.en[`${a.id}_category`] = a.category === 'Articles' ? 'Articles' : 'News';
+        articleTranslations.cs[`${a.id}_category`] = a.category === 'Articles' ? 'Články' : 'Aktuality';
+        articleTranslations.en[`${a.id}_date`]    = a.date_en;
+        articleTranslations.cs[`${a.id}_date`]    = a.date_cs;
+        articleTranslations.en[`${a.id}_title`]   = a.title_en;
+        articleTranslations.cs[`${a.id}_title`]   = a.title_cs;
+        articleTranslations.en[`${a.id}_excerpt`] = a.excerpt_en;
+        articleTranslations.cs[`${a.id}_excerpt`] = a.excerpt_cs;
     }
-};
 
-function setLanguage(lang: string): void {
-    currentLang = lang;
-    localStorage.setItem('language', lang);
-    document.documentElement.lang = lang === 'cs' ? 'cs' : 'en';
-    langBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-    const t = translations[lang];
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n')!;
-        if (t[key]) el.innerHTML = t[key];
+    const translations: Record<string, Record<string, string>> = {
+        en: {
+            ...sharedTranslations.en,
+            ...articleTranslations.en,
+            insightsTitle: 'Insights',
+            insightsDescription:
+                'Explore our latest articles, research, and thought leadership on executive search, HR consulting, and organizational development.',
+        },
+        cs: {
+            ...sharedTranslations.cs,
+            ...articleTranslations.cs,
+            insightsTitle: 'Novinky',
+            insightsDescription:
+                'Prozkoumejte naše nejnovější články, výzkum a myšlenkové vedení v oblasti executive search, HR poradenství a organizačního rozvoje.',
+        },
+    };
+
+    function setLanguage(lang: string): void {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+        document.documentElement.lang = lang === 'cs' ? 'cs' : 'en';
+        langBtns.forEach((btn) => btn.classList.toggle('active', btn.dataset.lang === lang));
+        const t = translations[lang];
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+            const key = el.getAttribute('data-i18n')!;
+            if (t[key]) el.innerHTML = t[key];
+        });
+    }
+    langBtns.forEach((btn) => btn.addEventListener('click', () => setLanguage(btn.dataset.lang!)));
+    setLanguage(currentLang);
+
+    window.addEventListener('scroll', () => {
+        document.querySelector('nav')!.classList.toggle('scrolled', window.scrollY > 50);
     });
-}
-langBtns.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang!)));
-setLanguage(currentLang);
-
-// Navbar scroll
-window.addEventListener('scroll', () => {
-    document.querySelector('nav')!.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-// Cookie consent
-const cookieBanner = document.getElementById('cookieBanner')!;
-const consent = localStorage.getItem('cookieConsent');
-if (!consent) setTimeout(() => cookieBanner.classList.add('show'), 1000);
-document.getElementById('cookieAccept')!.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'accepted');
-    cookieBanner.classList.remove('show');
-});
-document.getElementById('cookieDecline')!.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'declined');
-    cookieBanner.classList.remove('show');
-});
 </script>
