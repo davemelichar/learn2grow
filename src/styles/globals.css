@@ -137,8 +137,8 @@ nav.scrolled .logo { height: 36px; }
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 28px;
-    height: 20px;
+    width: 32px;
+    height: 22px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -147,15 +147,15 @@ nav.scrolled .logo { height: 36px; }
 }
 .hamburger span {
     display: block;
-    height: 2px;
+    height: 3px;
     background: var(--primary);
     border-radius: 2px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
 }
-.hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger.open span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+.hamburger.open span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
 
 /* ─── Mobile nav overlay ─────────────────────────────────── */
 .mobile-nav {
@@ -205,7 +205,7 @@ nav.scrolled .logo { height: 36px; }
 .mobile-nav .lang-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
 
 /* ─── Responsive ─────────────────────────────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .nav-container {
         grid-template-columns: 1fr auto;
     }
